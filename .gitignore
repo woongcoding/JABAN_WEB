@@ -1,0 +1,47 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+authorized_user.json
+client_secret_*.json
+*token*.json
+wp-config.php
+wp-config-*.php
+.htpasswd
+
+# Dependencies and generated files
+node_modules/
+vendor/
+.venv/
+__pycache__/
+*.py[cod]
+dist/
+build/
+coverage/
+playwright-report/
+test-results/
+*.log
+.playwright-mcp/
+
+# WordPress runtime and private material
+**/wp-admin/
+**/wp-includes/
+**/wp-content/uploads/
+**/wp-content/cache/
+**/wp-content/upgrade/
+**/wp-content/backups/
+**/wp-content/ai1wm-backups/
+private/
+backups/
+*.sql
+*.sql.gz
+*.wpress
+
+# Local editor / OS artifacts
+.DS_Store
+Thumbs.db
+.idea/
+*.tmp

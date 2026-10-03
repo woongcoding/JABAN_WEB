@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자반 포털 (jaban.co.kr) — 영양사 전용 AI 급식 식단 & 1인 원가율 계산기</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0A1D37;
+      --accent: #17A2B8;
+      --accent-hover: #138496;
+      --bg-sand: #F7F5F0;
+      --surface: #FFFFFF;
+      --line: #E2E8F0;
+      --text-main: #1E293B;
+      --text-muted: #64748B;
+      --badge-bg: #E0F2FE;
+      --badge-text: #0369A1;
+      --success: #10B981;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: var(--bg-sand);
+      color: var(--text-main);
+      padding: 30px 16px;
+    }
+
+    .widget-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--surface);
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 30px rgba(10, 29, 55, 0.08);
+      overflow: hidden;
+    }
+
+    /* Header */
+    .widget-header {
+      background: linear-gradient(135deg, var(--primary) 0%, #162f55 100%);
+      color: #fff;
+      padding: 24px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .widget-header h1 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .ai-badge {
+      background: rgba(23, 162, 184, 0.25);
+      border: 1px solid var(--accent);
+      color: #38BDF8;
+      font-family: 'Outfit', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 12px;
+    }
+    .widget-header p {
+      font-size: 13px;
+      color: #94A3B8;
+    }
+
+    /* Form Section */
+    .form-section {
+      padding: 28px 30px;
+      border-bottom: 1px solid var(--line);
+      background: #FAFAFA;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .form-control {
+      width: 100%;
+      height: 44px;
+      padding: 0 12px;
+      border: 1px solid #CBD5E1;
+      border-radius: 6px;
+      font-size: 14px;
+      font-family: inherit;
+      background: #fff;
+      transition: border-color 0.2s;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(23, 162, 184, 0.15);
+    }
+
+    .btn-generate {
+      width: 100%;
+      height: 48px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(23, 162, 184, 0.3);
+    }
+    .btn-generate:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Result Section */
+    .result-section {
+      padding: 30px;
+      display: none;
+    }
+    .result-section.active {
+      display: block;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .summary-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .metric-card {
+      background: #F8FAFC;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px 16px;
+      text-align: center;
+    }
+    .metric-title {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    .metric-val {
+      font-family: 'Outfit', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .metric-val.highlight { color: var(--accent); }
+
+    /* Meal Plan Table */
+    .plan-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .menu-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 12px;
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: border-color 0.2s;
+    }
+    .menu-card:hover { border-color: var(--accent); }
+    .menu-info h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .menu-info p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .menu-spec {
+      text-align: right;
+    }
+    .menu-boxes {
+      font-family: 'Outfit', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #0369A1;
+    }
+    .menu-tip {
+      font-size: 12px;
+      color: #059669;
+      margin-top: 4px;
+    }
+
+    /* CTA Section */
+    .cta-box {
+      margin-top: 24px;
+      background: #EFF6FF;
+      border: 1px solid #BFDBFE;
+      border-radius: 8px;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cta-text h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1E3A8A;
+      margin-bottom: 4px;
+    }
+    .cta-text p {
+      font-size: 13px;
+      color: #3B82F6;
+    }
+    .btn-quick-order {
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 22px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s;
+    }
+    .btn-quick-order:hover { background: #162f55; }
+  </style>
+</head>
+<body>
+
+  <div class="widget-container">
+    <!-- Header -->
+    <div class="widget-header">
+      <div>
+        <h1>
+          자반 AI 영양사 급식 솔루션
+          <span class="ai-badge">AI OPTIMIZER</span>
+        </h1>
+        <p>식수와 예산만 입력하면 최적의 수산물 식단, 1인 정량 및 5kg 필요 박스 수를 3초 만에 산출합니다.</p>
+      </div>
+    </div>
+
+    <!-- Inputs -->
+    <div class="form-section">
+      <div class="form-grid">
+        <div class="form-group">
+          <label>급식 시설 유형</label>
+          <select id="facilityType" class="form-control">
+            <option value="hospital" selected>요양병원 / 노인복지시설 (저염·안심순살)</option>
+            <option value="corporate">기업 구내식당 (푸짐한 100g 정량)</option>
+            <option value="kids">어린이집 / 유치원 (가시제로 50g)</option>
+            <option value="restaurant">일반 외식업 / 식당 (구이 특화)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>1회 배식 인원 (식수)</label>
+          <input type="number" id="mealCount" class="form-control" value="120" min="10" max="2000">
+        </div>
+
+        <div class="form-group">
+          <label>1인 목표 생선 단가 (원)</label>
+          <input type="number" id="targetCost" class="form-control" value="1200" step="50">
+        </div>
+
+        <div class="form-group">
+          <label>주간 생선 배식 횟수</label>
+          <select id="weeklyFreq" class="form-control">
+            <option value="2" selected>주 2회 (권장: 화/목)</option>
+            <option value="1">주 1회 (특식의 날)</option>
+            <option value="3">주 3회 (건강 생선 식단)</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="btn-generate" onclick="generateMealPlan()">
+        ✨ AI 최적 식단 & 발주량 자동 계산하기
+      </button>
+    </div>
+
+    <!-- Result -->
+    <div class="result-section" id="resultSection">
+      <div class="summary-metrics">
+        <div class="metric-card">
+          <div class="metric-title">총 배식 대상</div>
+          <div class="metric-val" id="resMealCount">120 명</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-title">1인 평균 원가</div>
+          <div class="metric-val highlight" id="resActualCost">1,130 원</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-title">목표 예산 대비</div>
+          <div class="metric-val" id="resBudgetDiff" style="color: var(--success);">-70 원 절감</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-title">주간 필요 총 수량</div>
+          <div class="metric-val" id="resTotalBoxes">4 박스 (20kg)</div>
+        </div>
+      </div>
+
+      <div class="plan-title">
+        <span>📋 주간 추천 생선 식단 및 필요 규격</span>
+        <span style="font-size:12px; color:var(--text-muted); font-weight:normal;">* 자반고래밥 5kg 벌크 규격 기준</span>
+      </div>
+
+      <div id="mealListContainer">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- CTA to gorebob.com -->
+      <div class="cta-box">
+        <div class="cta-text">
+          <h4>위 식단대로 1초 만에 발주하시겠습니까?</h4>
+          <p>산출된 품목과 수량이 고래밥 마켓(gorebob.com) 퀵오더 시트에 자동으로 담깁니다.</p>
+        </div>
+        <a href="b2b_quick_order.html" class="btn-quick-order">
+          고래밥 마켓에서 퀵오더 발주하기 ➔
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const RECIPE_DB = {
+      hospital: [
+        { name: '삼치 순살 데리야끼 조림', fish: '삼치 순살 (중)', weight: 100, boxWeight: 5, portionsPerBox: 50, pricePerBox: 58000, tip: '💡 오븐 185℃ 12분 조리 시 살 부서짐 없이 촉촉하게 완성' },
+        { name: '가자미 순살 레몬간장구이', fish: '가자미 순살 (소)', weight: 70, boxWeight: 5, portionsPerBox: 71, pricePerBox: 42000, tip: '💡 잔가시가 전혀 없어 어르신 배식 시 안전사고 완벽 방지' },
+        { name: '임연수 순살 스팀 콩나물찜', fish: '임연수 순살 (중)', weight: 100, boxWeight: 5, portionsPerBox: 50, pricePerBox: 48000, tip: '💡 부드러운 육질로 소화 흡수율 우수' }
+      ],
+      corporate: [
+        { name: '노르웨이 고등어 콤비오븐구이', fish: '고등어 토막 (소)', weight: 70, boxWeight: 5, portionsPerBox: 71, pricePerBox: 45000, tip: '💡 스팀 20% + 열풍 210℃로 14분 구워 겉바속촉 구현' },
+        { name: '매콤 코다리 무조림', fish: '코다리 절단 토막', weight: 100, boxWeight: 5, portionsPerBox: 50, pricePerBox: 38000, tip: '💡 100인분 대형 회전국솥 전용 레시피 제공' },
+        { name: '삼치 순살 카레 튀김구이', fish: '삼치 순살 (중)', weight: 100, boxWeight: 5, portionsPerBox: 50, pricePerBox: 58000, tip: '💡 카레가루를 묻혀 오븐에 구워 생선 비린내 완벽 차단' }
+      ],
+      kids: [
+        { name: '안심 삼치 순살 핑거까스', fish: '삼치 순살 (중)', weight: 50, boxWeight: 5, portionsPerBox: 100, pricePerBox: 58000, tip: '💡 수제 수산물 핑거푸드로 아이들 잔반 제로 검증' },
+        { name: '가자미 순살 버터구이', fish: '가자미 순살 (소)', weight: 50, boxWeight: 5, portionsPerBox: 100, pricePerBox: 42000, tip: '💡 부드러운 흰살생선으로 비린내가 없어 인기 No.1' }
+      ]
+    };
+
+    function generateMealPlan() {
+      const facility = document.getElementById('facilityType').value;
+      const count = parseInt(document.getElementById('mealCount').value) || 100;
+      const targetCost = parseInt(document.getElementById('targetCost').value) || 1200;
+      const freq = parseInt(document.getElementById('weeklyFreq').value) || 2;
+
+      const candidates = RECIPE_DB[facility] || RECIPE_DB.corporate;
+      const selected = candidates.slice(0, freq);
+
+      let totalBoxes = 0;
+      let totalCost = 0;
+      const listContainer = document.getElementById('mealListContainer');
+      listContainer.innerHTML = '';
+
+      selected.forEach((item, idx) => {
+        // 박스 수 계산: count / portionsPerBox 올림
+        const boxesNeeded = Math.ceil(count / item.portionsPerBox);
+        const itemCost = boxesNeeded * item.pricePerBox;
+        const costPerServing = Math.round(itemCost / count);
+
+        totalBoxes += boxesNeeded;
+        totalCost += itemCost;
+
+        const dayName = idx === 0 ? '화요일 메뉴' : (idx === 1 ? '목요일 메뉴' : '수요일 메뉴');
+
+        listContainer.innerHTML += `
+          <div class="menu-card">
+            <div class="menu-info">
+              <span style="font-size:11px; font-weight:700; color:var(--accent); text-transform:uppercase;">${dayName}</span>
+              <h4>${item.name}</h4>
+              <p>추천 식재료: <strong>${item.fish}</strong> (1인 정량: ${item.weight}g)</p>
+              <div class="menu-tip">${item.tip}</div>
+            </div>
+            <div class="menu-spec">
+              <div class="menu-boxes">${boxesNeeded} 박스 (${boxesNeeded * 5}kg)</div>
+              <div style="font-size:13px; color:var(--text-muted); margin-top:2px;">1인당 ${costPerServing.toLocaleString()}원</div>
+            </div>
+          </div>
+        `;
+      });
+
+      const avgCostPerServing = Math.round(totalCost / (count * freq));
+      const diff = avgCostPerServing - targetCost;
+
+      document.getElementById('resMealCount').innerText = `${count.toLocaleString()} 명`;
+      document.getElementById('resActualCost').innerText = `${avgCostPerServing.toLocaleString()} 원`;
+      
+      const diffEl = document.getElementById('resBudgetDiff');
+      if (diff <= 0) {
+        diffEl.innerText = `${Math.abs(diff).toLocaleString()} 원 절감`;
+        diffEl.style.color = 'var(--success)';
+      } else {
+        diffEl.innerText = `+${diff.toLocaleString()} 원 초과`;
+        diffEl.style.color = '#EF4444';
+      }
+
+      document.getElementById('resTotalBoxes').innerText = `${totalBoxes} 박스 (${totalBoxes * 5}kg)`;
+      document.getElementById('resultSection').classList.add('active');
+    }
+  </script>
+</body>
+</html>

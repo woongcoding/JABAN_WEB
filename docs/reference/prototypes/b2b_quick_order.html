@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>고래밥 마켓 (gorebob.com) — 단체급식 퀵오더 B2B 발주시트</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0A1D37;
+      --primary-light: #162f55;
+      --accent: #17A2B8;
+      --accent-hover: #138496;
+      --bg-sand: #F7F5F0;
+      --surface: #FFFFFF;
+      --line: #E2E2E2;
+      --text-main: #1E293B;
+      --text-muted: #64748B;
+      --badge-bg: #E0F2FE;
+      --badge-text: #0369A1;
+      --success: #10B981;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: var(--bg-sand);
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    /* GNB Minimal Header */
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--accent);
+    }
+    .logo-group {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+    .logo {
+      font-family: 'Outfit', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #fff;
+      text-decoration: none;
+    }
+    .tagline {
+      font-size: 13px;
+      color: #94A3B8;
+      font-weight: 400;
+    }
+    .header-tools {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 13px;
+    }
+    .portal-link {
+      background: rgba(255,255,255,0.12);
+      color: #BAE6FD;
+      padding: 6px 12px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .portal-link:hover { background: rgba(255,255,255,0.2); }
+
+    /* Main Container */
+    .container {
+      max-width: 1200px;
+      margin: 24px auto;
+      padding: 0 16px;
+    }
+
+    /* Quick Reorder Banner */
+    .reorder-card {
+      background: #FFFFFF;
+      border: 1px solid #BAE6FD;
+      border-left: 5px solid var(--accent);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .reorder-info h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .reorder-info p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .btn-reorder {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-reorder:hover { background: var(--accent-hover); }
+
+    /* Order Section Header */
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .badge-b2b {
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    /* Filter Bar */
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 14px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+    .filter-btn {
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .filter-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    /* Excel-style Order Table */
+    .table-wrapper {
+      background: #fff;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    }
+    table.order-grid {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 14px;
+    }
+    table.order-grid th {
+      background: #F1F5F9;
+      color: #475569;
+      font-weight: 700;
+      padding: 12px 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 13px;
+    }
+    table.order-grid td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: middle;
+    }
+    table.order-grid tr:hover {
+      background-color: #F8FAFC;
+    }
+
+    .prod-code {
+      font-family: 'Outfit', sans-serif;
+      font-size: 11px;
+      color: #94A3B8;
+    }
+    .prod-name {
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .origin-tag {
+      font-size: 11px;
+      color: #64748B;
+      background: #F1F5F9;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+    .num-col {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+    }
+    .portion-tag {
+      color: #0369A1;
+      font-weight: 700;
+    }
+
+    /* Qty Input Control */
+    .qty-control {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .qty-btn {
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .qty-btn:hover { background: #E2E8F0; }
+    .qty-input {
+      width: 48px;
+      height: 28px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      text-align: center;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    /* Sticky Bottom Checkout Bar */
+    .bottom-bar {
+      position: sticky;
+      bottom: 0;
+      background: rgba(10, 29, 55, 0.96);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      padding: 16px 24px;
+      border-radius: 10px;
+      margin-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+      z-index: 100;
+    }
+    .summary-group {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+    .summary-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .summary-label {
+      font-size: 11px;
+      color: #94A3B8;
+      text-transform: uppercase;
+    }
+    .summary-val {
+      font-family: 'Outfit', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #BAE6FD;
+    }
+    .summary-val.total-price {
+      color: #38BDF8;
+      font-size: 24px;
+    }
+    .action-group {
+      display: flex;
+      gap: 12px;
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.25); }
+    .btn-checkout {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(23, 162, 184, 0.4);
+      transition: all 0.2s;
+    }
+    .btn-checkout:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Modal for Quotation Print */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .quote-box {
+      background: #fff;
+      width: 90%;
+      max-width: 680px;
+      border-radius: 8px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      position: relative;
+    }
+    .quote-header {
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .quote-header h2 {
+      font-size: 20px;
+      color: var(--primary);
+    }
+    .quote-company-stamp {
+      font-size: 12px;
+      color: #64748B;
+      text-align: right;
+    }
+    .quote-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      font-size: 13px;
+    }
+    .quote-table th, .quote-table td {
+      border: 1px solid #CBD5E1;
+      padding: 8px 10px;
+      text-align: center;
+    }
+    .quote-table th { background: #F8FAFC; font-weight: 700; }
+    .quote-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    @media print {
+      body * { visibility: hidden; }
+      .quote-box, .quote-box * { visibility: visible; }
+      .quote-box {
+        position: absolute;
+        left: 0; top: 0; width: 100%; max-width: 100%;
+        box-shadow: none; border: none;
+      }
+      .quote-actions { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Minimal Header -->
+  <header>
+    <div class="logo-group">
+      <a href="#" class="logo">GOREBOB.COM</a>
+      <span class="tagline">급식·식당 대용량 손질생선 퀵오더 전문몰</span>
+    </div>
+    <div class="header-tools">
+      <span>사업자회원: <strong>강릉요양병원 (김영양 님)</strong></span>
+      <a href="https://jaban.co.kr" target="_blank" class="portal-link">브랜드 포털 & 100인분 조리법 ↗</a>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- 1-Second Reorder Card -->
+    <div class="reorder-card">
+      <div class="reorder-info">
+        <h3>⚡ 지난주 발주 내역 (2026-09-26 출고 완료)</h3>
+        <p>고등어 토막(소) 5kg 2박스 + 삼치 순살(중) 5kg 1박스 (총 150인분 / 148,000원)</p>
+      </div>
+      <button class="btn-reorder" onclick="loadPreviousOrder()">이 구성 그대로 수량 담기</button>
+    </div>
+
+    <!-- Section Header -->
+    <div class="section-head">
+      <div class="section-title">
+        급식용 5kg 규격 벌크 퀵오더 발주시트
+        <span class="badge-b2b">사업자 도매가 적용 중</span>
+      </div>
+      <div style="font-size: 12px; color: var(--text-muted);">
+        ※ 50인분 이상 전국 콜드체인 무료 직배송 (영하 18℃ 유지)
+      </div>
+    </div>
+
+    <!-- Quick Filter -->
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterItems('all')">전체 품목 (10)</button>
+      <button class="filter-btn" onclick="filterItems('순살')">안심 순살 (잔가시 제로)</button>
+      <button class="filter-btn" onclick="filterItems('토막')">1인 정량 토막</button>
+      <button class="filter-btn" onclick="filterItems('등자반')">식당용 등자반/반포</button>
+    </div>
+
+    <!-- Excel-Style Order Table -->
+    <div class="table-wrapper">
+      <table class="order-grid">
+        <thead>
+          <tr>
+            <th width="40"><input type="checkbox" id="selectAll" onchange="toggleSelectAll(this)"></th>
+            <th width="80">품목코드</th>
+            <th>어종 및 상품명</th>
+            <th width="100">가공 형태</th>
+            <th width="120">1인 정량 규격</th>
+            <th width="110">박스당 인분</th>
+            <th width="100">박스당 단가</th>
+            <th width="130">발주 수량(박스)</th>
+            <th width="110" style="text-align: right;">소계(원)</th>
+          </tr>
+        </thead>
+        <tbody id="productRows">
+          <!-- Rows rendered by JS -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Sticky Bottom Checkout Bar -->
+    <div class="bottom-bar">
+      <div class="summary-group">
+        <div class="summary-item">
+          <span class="summary-label">선택 품목수</span>
+          <span class="summary-val" id="summaryCount">0 개</span>
+        </div>
+        <div class="summary-item">
+          <span class="summary-label">총 배식 인분</span>
+          <span class="summary-val" id="summaryPortions">0 인분</span>
+        </div>
+        <div class="summary-item">
+          <span class="summary-label">1인당 평균 생선 원가</span>
+          <span class="summary-val" id="summaryCostPerHead">0 원</span>
+        </div>
+        <div class="summary-item">
+          <span class="summary-label">총 발주 금액 (VAT포함)</span>
+          <span class="summary-val total-price" id="summaryTotalPrice">0 원</span>
+        </div>
+      </div>
+      <div class="action-group">
+        <button class="btn-secondary" onclick="openQuoteModal()">견적서 즉시 출력 (품의용)</button>
+        <button class="btn-checkout" onclick="submitQuickOrder()">장바구니 일괄 발주 ➔</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Quotation Print Modal -->
+  <div class="modal-overlay" id="quoteModal">
+    <div class="quote-box">
+      <div class="quote-header">
+        <h2>공 식 견 적 서 (B2B 납품용)</h2>
+        <div class="quote-company-stamp">
+          <strong>(주)자반 / 자반고래밥</strong><br>
+          사업자: 226-81-00000 | 대표 김정현<br>
+          강원 강릉시 공항길43번길 56 (HACCP 제2015-00호)
+        </div>
+      </div>
+      <p style="font-size: 13px; margin-bottom: 12px;">
+        <strong>수신:</strong> 강릉요양병원 급식담당 영양사 님 귀하<br>
+        <strong>일자:</strong> <span id="quoteDate"></span><br>
+        <strong>결제조건:</strong> 사업자 후청구(세금계산서 발행) / 익월 결제 협의 가능
+      </p>
+
+      <table class="quote-table">
+        <thead>
+          <tr>
+            <th>품명 및 규격</th>
+            <th>규격(중량)</th>
+            <th>수량(박스)</th>
+            <th>단가</th>
+            <th>공급가액</th>
+          </tr>
+        </thead>
+        <tbody id="quoteList"></tbody>
+        <tfoot>
+          <tr>
+            <th colspan="4" style="text-align: right;">합계 금액:</th>
+            <th id="quoteTotalAmount" style="color: #0369A1; font-size: 15px;">0 원</th>
+          </tr>
+        </tfoot>
+      </table>
+
+      <div class="quote-actions">
+        <button class="btn-secondary" onclick="closeQuoteModal()" style="color:#333; border-color:#ccc;">닫기</button>
+        <button class="btn-checkout" onclick="window.print()">인쇄 / PDF 저장</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const PRODUCTS = [
+      { id: 'JB-MK-01', name: '고등어 토막 (소)', origin: '노르웨이', form: '토막', portion: '70g (약 71토막)', portionsPerBox: 71, price: 45000, category: '토막' },
+      { id: 'JB-MK-02', name: '고등어 순살 (중)', origin: '노르웨이', form: '순살', portion: '100g (약 50토막)', portionsPerBox: 50, price: 49000, category: '순살' },
+      { id: 'JB-SC-01', name: '삼치 순살 (중) 안심가시제거', origin: '국내산', form: '순살', portion: '100g (약 50토막)', portionsPerBox: 50, price: 58000, category: '순살' },
+      { id: 'JB-SC-02', name: '삼치 토막 (소)', origin: '국내산', form: '토막', portion: '70g (약 71토막)', portionsPerBox: 71, price: 53000, category: '토막' },
+      { id: 'JB-GJ-01', name: '가자미 순살 (소)', origin: '러시아', form: '순살', portion: '70g (약 71토막)', portionsPerBox: 71, price: 42000, category: '순살' },
+      { id: 'JB-IY-01', name: '임연수 순살 (중)', origin: '러시아', form: '순살', portion: '100g (약 50토막)', portionsPerBox: 50, price: 48000, category: '순살' },
+      { id: 'JB-GC-01', name: '갈치 토막 (소) 13~15토막/kg', origin: '세네갈', form: '토막', portion: '70g (약 71토막)', portionsPerBox: 71, price: 59000, category: '토막' },
+      { id: 'JB-KD-01', name: '코다리 절단 토막 (조림용)', origin: '러시아', form: '토막', portion: '100g (약 50토막)', portionsPerBox: 50, price: 38000, category: '토막' },
+      { id: 'JB-OJ-01', name: '손질 통오징어/링 (급식용)', origin: '원양산', form: '손질', portion: '80g (약 62인분)', portionsPerBox: 62, price: 62000, category: '토막' },
+      { id: 'JB-RE-01', name: '식당용 고등어 등자반 (대)', origin: '노르웨이', form: '등자반', portion: '통마리 20미', portionsPerBox: 40, price: 64000, category: '등자반' }
+    ];
+
+    let orderState = {};
+
+    function initTable(filter = 'all') {
+      const tbody = document.getElementById('productRows');
+      tbody.innerHTML = '';
+
+      PRODUCTS.filter(p => filter === 'all' || p.category === filter).forEach(p => {
+        const qty = orderState[p.id] || 0;
+        const subtotal = qty * p.price;
+        const isChecked = qty > 0;
+
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><input type="checkbox" data-id="${p.id}" ${isChecked ? 'checked' : ''} onchange="onCheckChange('${p.id}', this.checked)"></td>
+          <td class="prod-code">${p.id}</td>
+          <td>
+            <div class="prod-name">
+              ${p.name}
+              <span class="origin-tag">${p.origin}</span>
+            </div>
+          </td>
+          <td><span class="origin-tag" style="background:#E0F2FE; color:#0369A1;">${p.form}</span></td>
+          <td class="portion-tag">${p.portion}</td>
+          <td class="num-col">${p.portionsPerBox} 인분</td>
+          <td class="num-col">${p.price.toLocaleString()} 원</td>
+          <td>
+            <div class="qty-control">
+              <button class="qty-btn" onclick="updateQty('${p.id}', -1)">-</button>
+              <input type="number" class="qty-input" id="qty-${p.id}" value="${qty}" min="0" onchange="onQtyDirectInput('${p.id}', this.value)">
+              <button class="qty-btn" onclick="updateQty('${p.id}', 1)">+</button>
+            </div>
+          </td>
+          <td class="num-col" style="text-align: right; font-weight:700;" id="subtotal-${p.id}">${subtotal.toLocaleString()} 원</td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      calculateSummary();
+    }
+
+    function updateQty(id, delta) {
+      const current = orderState[id] || 0;
+      const next = Math.max(0, current + delta);
+      orderState[id] = next;
+      document.getElementById(`qty-${id}`).value = next;
+      
+      const prod = PRODUCTS.find(p => p.id === id);
+      document.getElementById(`subtotal-${id}`).innerText = (next * prod.price).toLocaleString() + ' 원';
+      
+      const chk = document.querySelector(`input[data-id="${id}"]`);
+      if (chk) chk.checked = next > 0;
+      
+      calculateSummary();
+    }
+
+    function onQtyDirectInput(id, val) {
+      const num = Math.max(0, parseInt(val) || 0);
+      orderState[id] = num;
+      const prod = PRODUCTS.find(p => p.id === id);
+      document.getElementById(`subtotal-${id}`).innerText = (num * prod.price).toLocaleString() + ' 원';
+      
+      const chk = document.querySelector(`input[data-id="${id}"]`);
+      if (chk) chk.checked = num > 0;
+
+      calculateSummary();
+    }
+
+    function onCheckChange(id, checked) {
+      if (checked && (!orderState[id] || orderState[id] === 0)) {
+        orderState[id] = 1;
+      } else if (!checked) {
+        orderState[id] = 0;
+      }
+      document.getElementById(`qty-${id}`).value = orderState[id];
+      const prod = PRODUCTS.find(p => p.id === id);
+      document.getElementById(`subtotal-${id}`).innerText = (orderState[id] * prod.price).toLocaleString() + ' 원';
+      calculateSummary();
+    }
+
+    function toggleSelectAll(master) {
+      PRODUCTS.forEach(p => {
+        if (master.checked) {
+          if (!orderState[p.id]) orderState[p.id] = 1;
+        } else {
+          orderState[p.id] = 0;
+        }
+        const input = document.getElementById(`qty-${p.id}`);
+        if (input) input.value = orderState[p.id];
+        const sub = document.getElementById(`subtotal-${p.id}`);
+        if (sub) sub.innerText = (orderState[p.id] * p.price).toLocaleString() + ' 원';
+        const chk = document.querySelector(`input[data-id="${p.id}"]`);
+        if (chk) chk.checked = master.checked;
+      });
+      calculateSummary();
+    }
+
+    function calculateSummary() {
+      let count = 0;
+      let totalPortions = 0;
+      let totalPrice = 0;
+
+      for (const [id, qty] of Object.entries(orderState)) {
+        if (qty > 0) {
+          const prod = PRODUCTS.find(p => p.id === id);
+          if (prod) {
+            count += 1;
+            totalPortions += qty * prod.portionsPerBox;
+            totalPrice += qty * prod.price;
+          }
+        }
+      }
+
+      const costPerHead = totalPortions > 0 ? Math.round(totalPrice / totalPortions) : 0;
+
+      document.getElementById('summaryCount').innerText = `${count} 개`;
+      document.getElementById('summaryPortions').innerText = `${totalPortions.toLocaleString()} 인분`;
+      document.getElementById('summaryCostPerHead').innerText = `${costPerHead.toLocaleString()} 원`;
+      document.getElementById('summaryTotalPrice').innerText = `${totalPrice.toLocaleString()} 원`;
+    }
+
+    function loadPreviousOrder() {
+      orderState['JB-MK-01'] = 2; // 고등어 토막 소 2박스
+      orderState['JB-SC-01'] = 1; // 삼치 순살 중 1박스
+      initTable();
+      alert('⚡ 지난주 발주 품목(고등어 2박스 + 삼치 1박스)이 발주시트에 자동으로 채워졌습니다.');
+    }
+
+    function filterItems(category) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      initTable(category);
+    }
+
+    function openQuoteModal() {
+      const listEl = document.getElementById('quoteList');
+      listEl.innerHTML = '';
+      let total = 0;
+      let hasItem = false;
+
+      PRODUCTS.forEach(p => {
+        const q = orderState[p.id] || 0;
+        if (q > 0) {
+          hasItem = true;
+          const sub = q * p.price;
+          total += sub;
+          listEl.innerHTML += `
+            <tr>
+              <td style="text-align:left;">${p.name} (${p.origin})</td>
+              <td>${p.portion}</td>
+              <td>${q} 박스</td>
+              <td>${p.price.toLocaleString()} 원</td>
+              <td>${sub.toLocaleString()} 원</td>
+            </tr>
+          `;
+        }
+      });
+
+      if (!hasItem) {
+        alert('발주하실 품목의 수량을 1박스 이상 선택해 주세요.');
+        return;
+      }
+
+      const today = new Date().toISOString().slice(0, 10);
+      document.getElementById('quoteDate').innerText = today;
+      document.getElementById('quoteTotalAmount').innerText = total.toLocaleString() + ' 원';
+      document.getElementById('quoteModal').classList.add('active');
+    }
+
+    function closeQuoteModal() {
+      document.getElementById('quoteModal').classList.remove('active');
+    }
+
+    function submitQuickOrder() {
+      const items = [];
+      for (const [id, qty] of Object.entries(orderState)) {
+        if (qty > 0) items.push(`${id}:${qty}`);
+      }
+      if (items.length === 0) {
+        alert('발주할 품목의 수량을 선택해 주세요.');
+        return;
+      }
+      alert(`[카페24 장바구니 연동 성공]\n총 ${items.length}개 품목이 카페24 B2B 장바구니에 담겼습니다.\n주문서 작성 페이지로 이동합니다.`);
+    }
+
+    // 초기 실행
+    initTable();
+  </script>
+</body>
+</html>

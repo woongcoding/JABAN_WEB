@@ -1,0 +1,41 @@
+{
+    "snapshot_date":  "2026-10-03",
+    "source_project":  "C:/woongcoding/JABAN_AGENT",
+    "files":  [
+                  {
+                      "source":  "C:/woongcoding/JABAN_AGENT/outputs/two_site_operating_plan_20261003/자반고래밥_두사이트_운영계획.html",
+                      "copy":  "docs/reference/plans/자반고래밥_두사이트_운영계획.html",
+                      "sha256":  "17AD5C33581D44D4E82C2206C8D3E3635B9BE713AA2DC6A7BB48A63D41BBFDB3",
+                      "copied_on":  "2026-10-03",
+                      "purpose":  "reference_only_not_production"
+                  },
+                  {
+                      "source":  "C:/woongcoding/JABAN_AGENT/outputs/two_site_operating_plan_20261003/자반고래밥_두사이트_운영계획.txt",
+                      "copy":  "docs/reference/plans/자반고래밥_두사이트_운영계획.txt",
+                      "sha256":  "D6312818C37555000EF629F90769701DD8E2DB251EC17A34AF5E1E62CDCE2563",
+                      "copied_on":  "2026-10-03",
+                      "purpose":  "reference_only_not_production"
+                  },
+                  {
+                      "source":  "C:/woongcoding/JABAN_AGENT/outputs/two_site_operating_plan_20261003/자반고래밥_두사이트_운영계획.pdf",
+                      "copy":  "docs/reference/plans/자반고래밥_두사이트_운영계획.pdf",
+                      "sha256":  "A9C888475B64F0F15B8F8C70A098A8F3D22AB5BBBE4A74DBCBB2755AC62E009A",
+                      "copied_on":  "2026-10-03",
+                      "purpose":  "reference_only_not_production"
+                  },
+                  {
+                      "source":  "C:/woongcoding/JABAN_AGENT/Management_Agent/outputs/cafe24_pages/b2b_quick_order.html",
+                      "copy":  "docs/reference/prototypes/b2b_quick_order.html",
+                      "sha256":  "ADFFF5FFA97935E98FDCE9100B8BEE182228627B29F29E77E9A30B13CD3F73AA",
+                      "copied_on":  "2026-10-03",
+                      "purpose":  "reference_only_not_production"
+                  },
+                  {
+                      "source":  "C:/woongcoding/JABAN_AGENT/Management_Agent/outputs/cafe24_pages/ai_meal_planner_widget.html",
+                      "copy":  "docs/reference/prototypes/ai_meal_planner_widget.html",
+                      "sha256":  "04EE04530F68288B116B366A9C6EF2643D8B9BC447E4F4D9AFDB3A5C4CE58157",
+                      "copied_on":  "2026-10-03",
+                      "purpose":  "reference_only_not_production"
+                  }
+              ]
+}

@@ -1,0 +1,11 @@
+{
+  "folders": [
+    { "name": "JABAN_WEB · 웹사이트 개발", "path": "." },
+    { "name": "JABAN_AGENT · 기존 업무 자료", "path": "../JABAN_AGENT" }
+  ],
+  "settings": {
+    "files.encoding": "utf8",
+    "files.exclude": { "**/__pycache__": true, "**/node_modules": true },
+    "search.exclude": { "**/.venv": true, "**/node_modules": true }
+  }
+}
