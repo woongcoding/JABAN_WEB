@@ -1,7 +1,7 @@
 {
   "folders": [
     { "name": "JABAN_WEB · 웹사이트 개발", "path": "." },
-    { "name": "JABAN_AGENT · 기존 업무 자료", "path": "../JABAN_AGENT" }
+    { "name": "JABAN_project · 기존 업무 자료", "path": ".." }
   ],
   "settings": {
     "files.encoding": "utf8",

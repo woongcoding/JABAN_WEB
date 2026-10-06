@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="trust">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자반고래밥 공식 브랜드 허브 | jaban.co.kr (로컬 초안 v1.0)</title>
+  <meta name="description" content="수산물 가공 전문 자반고래밥의 공식 브랜드 사이트입니다. 가공 공정, 영양사용 생선 선택 가이드, 대량 조리 레시피를 확인하세요.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 1. 사내 검수 컨트롤러 바 -->
+  <aside class="audit-control-bar" aria-label="사내 검수 컨트롤러">
+    <div class="audit-status-badge">
+      <span class="pulse-dot">●</span> <strong>로컬 화면 초안 (v1.0)</strong> | 사실 검수 대기 모드
+    </div>
+    <div class="audit-controls">
+      <div class="theme-toggle-group">
+        <span>디자인 컨셉:</span>
+        <button type="button" class="btn-switch active" data-set-theme="trust">모던 B2B 신뢰형</button>
+        <button type="button" class="btn-switch" data-set-theme="heritage">장인 헤리티지형</button>
+      </div>
+      <div class="audit-toggle-group">
+        <button type="button" class="btn-switch active" id="btn-toggle-audit">🔍 사내 검수 모드: <strong>ON</strong></button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 2. 2-트랙 운영 안내 띠배너 -->
+  <div class="two-track-banner">
+    <span>💡 <strong>자반고래밥 2-트랙 안내</strong>: 본 사이트(<code>jaban.co.kr</code>)는 회사 소개 및 생선 품질 가이드를 제공하며, 실제 주문 및 결제는 <strong>공식 쇼핑몰(<code>gorebob.com</code>)</strong>에서 진행됩니다.</span>
+    <a href="https://gorebob.com" target="_blank" rel="noopener">쇼핑몰 바로가기 &rarr;</a>
+  </div>
+
+  <!-- 3. 글로벌 네비게이션 헤더 -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo-area">
+        <a href="index.html" class="brand-badge">
+          <span>자반</span>고래밥
+        </a>
+        <div class="brand-tagline">수산물 가공식품 제조 전문</div>
+      </div>
+      <nav class="main-nav" aria-label="메인 네비게이션">
+        <a href="company.html" class="nav-link">회사 소개</a>
+        <a href="quality.html" class="nav-link">위생·가공 공정</a>
+        <a href="guides.html" class="nav-link">어종별 선택 가이드</a>
+        <a href="recipes.html" class="nav-link">조리 레시피</a>
+        <a href="contact.html" class="nav-link">고객센터·도매문의</a>
+      </nav>
+      <div class="header-cta-group">
+        <a href="https://gorebob.com" class="btn-mall-direct" target="_blank" rel="noopener">
+          <span>🛒 쇼핑몰 구매</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 4. 메인 히어로 섹션 -->
+  <main>
+    <section class="hero-section">
+      <div class="container hero-content">
+        <div class="hero-eyebrow">
+          <span>🌊 정직한 가공, 신뢰받는 단체급식 수산물</span>
+        </div>
+        <h1 class="hero-title">
+          식판 위에 오르는 생선 한 토막,<br>
+          <span>타협 없는 위생과 규격</span>으로 증명합니다.
+        </h1>
+        <p class="hero-desc">
+          자반고래밥은 학교·기업 단체급식과 업소용 전문 맞춤 손질 수산물을 생산합니다.<br>
+          원물 선별부터 HACCP 위생 공정, 수작업 잔가시 선별까지 정직한 정보를 확인하세요.
+        </p>
+        <div class="hero-action-buttons">
+          <a href="guides.html" class="btn-primary">어종별 규격 가이드 보기 &rarr;</a>
+          <a href="quality.html" class="btn-secondary">위생 가공 공정 확인</a>
+          <a href="https://gorebob.com" class="btn-secondary" target="_blank" rel="noopener">쇼핑몰(gorebob.com) 직행</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 사내 검수 안내 콜아웃 (검수 모드 ON 시 표시) -->
+    <div class="container">
+      <div class="audit-callout">
+        <strong>📋 사내 검수 안내 (지웅님 및 각 부문 담당자 회의용)</strong>
+        현재 화면은 로컬 프로토타입이며, 노란색 태그 <code>[검수 대기]</code>가 붙은 항목은 사내 공식 서류나 쇼핑몰 설정과 대조가 필요한 항목입니다. 상단 우측 '사내 검수 모드: OFF'를 클릭하면 일반 고객 시점의 깔끔한 화면을 미리 보실 수 있습니다.
+      </div>
+    </div>
+
+    <!-- 5. 5대 핵심 페이지 바로가기 카드 그리드 -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-subtitle">Core Architecture</div>
+          <h2 class="section-title">5대 핵심 페이지 프로토타입 둘러보기</h2>
+          <p class="section-desc">로컬 화면 초안으로 제작된 5대 화면을 둘러보시고 화면 구성과 텍스트 문안에 대해 의견을 제시해 주세요.</p>
+        </div>
+
+        <div class="card-grid">
+          <!-- 1. 회사 소개 -->
+          <article class="card">
+            <div class="card-icon">🏢</div>
+            <h3 class="card-title">1. 회사 소개 <span class="audit-badge">연혁 검수 대기</span></h3>
+            <p class="card-desc">
+              제조 담당 <strong>자반고래밥</strong>(김정현 대표)과 B2B 유통 도매 담당 <strong>주식회사 자반</strong>(김지웅 대표)의 명확한 역할 분담과 기업 철학을 안내합니다.
+            </p>
+            <a href="company.html" class="card-link">회사 소개 화면 열기 &rarr;</a>
+          </article>
+
+          <!-- 2. 위생·가공 공정 -->
+          <article class="card">
+            <div class="card-icon">🛡️</div>
+            <h3 class="card-title">2. 위생·가공 공정 <span class="audit-badge">설비 스펙 검수 대기</span></h3>
+            <p class="card-desc">
+              원물 입고 ➔ 해동 및 세척 ➔ 필렛 절단 및 수작업 가시 선별 ➔ 금속검출 ➔ 냉동 및 포장으로 이어지는 5단계 표준 공정 흐름을 투명하게 공개합니다.
+            </p>
+            <a href="quality.html" class="card-link">공정 안내 화면 열기 &rarr;</a>
+          </article>
+
+          <!-- 3. 어종별 선택 가이드 -->
+          <article class="card">
+            <div class="card-icon">🐟</div>
+            <h3 class="card-title">3. 어종별 선택 가이드 <span class="audit-badge">SKU 링크 검수 대기</span></h3>
+            <p class="card-desc">
+              고등어, 삼치, 임연수, 갈치 4종 규격 비교표, 잔가시 제거 vs 일반 순살 등급 안내, 영양사용 1인 정량 계산 예시 및 쇼핑몰 1:1 직행 링크.
+            </p>
+            <a href="guides.html" class="card-link">어종 가이드 화면 열기 &rarr;</a>
+          </article>
+
+          <!-- 4. 조리 레시피 -->
+          <article class="card">
+            <div class="card-icon">🍳</div>
+            <h3 class="card-title">4. 조리 레시피 <span class="audit-badge">영상 링크 검수 대기</span></h3>
+            <p class="card-desc">
+              급식 현장을 위한 대량 오븐구이 온도·시간 가이드, 비린내 없는 조림 비법 및 유튜브 동영상 임베드 영역을 제공합니다.
+            </p>
+            <a href="recipes.html" class="card-link">레시피 화면 열기 &rarr;</a>
+          </article>
+
+          <!-- 5. 고객센터 & 도매 문의 -->
+          <article class="card">
+            <div class="card-icon">📞</div>
+            <h3 class="card-title">5. 고객센터·도매문의 <span class="audit-badge">전화/시간 검수 대기</span></h3>
+            <p class="card-desc">
+              불필요한 입력 폼 대신 카카오톡 채널 1초 상담 연결, 직통 전화, 대량 정기 납품 및 급식 샘플 요청 절차를 직관적으로 안내합니다.
+            </p>
+            <a href="contact.html" class="card-link">고객센터 화면 열기 &rarr;</a>
+          </article>
+
+          <!-- 6. 쇼핑몰 연동 안내 카드 -->
+          <article class="card" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #ffffff;">
+            <div class="card-icon" style="background: rgba(2, 132, 199, 0.3); color: #38bdf8;">🛒</div>
+            <h3 class="card-title" style="color: #ffffff;">실시간 구매 쇼핑몰</h3>
+            <p class="card-desc" style="color: #94a3b8;">
+              자반고래밥의 실제 판매 단가, 당일 발송 재고, 사업자 세금계산서 발행 및 신용카드 결제는 카페24 자사몰에서 24시간 처리됩니다.
+            </p>
+            <a href="https://gorebob.com" target="_blank" rel="noopener" class="card-link" style="color: #38bdf8;">
+              gorebob.com 방문하기 &rarr;
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. 2-트랙 연동 원칙 안내 섹션 -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-subtitle">Operational Strategy</div>
+          <h2 class="section-title">jaban.co.kr과 gorebob.com의 역할 분담 원칙</h2>
+        </div>
+        
+        <div class="table-responsive">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>구분</th>
+                <th>jaban.co.kr (브랜드·홍보·B2B 정보)</th>
+                <th>gorebob.com (카페24 쇼핑몰)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>주요 기능</strong></td>
+                <td>회사 신뢰성 검증, 위생 공정 증명, 어종별 규격 가이드, 레시피</td>
+                <td>실시간 판매단가 확인, 장바구니, 결제(PG), 배송조회, 세금계산서</td>
+              </tr>
+              <tr>
+                <td><strong>타깃 고객</strong></td>
+                <td>영양사, 식자재 유통 바이어, 품질 확인이 필요한 신규 고객</td>
+                <td>즉시 구매 고객, 정기 재구매 사업자</td>
+              </tr>
+              <tr>
+                <td><strong>가격·재고 관리</strong></td>
+                <td>금액 하드코딩 배제 (쇼핑몰 직행 딥링크로 항상 최신 단가 보장)</td>
+                <td>카페24 관리자에서 안전재고 버퍼 및 실시간 단가 관리</td>
+              </tr>
+              <tr>
+                <td><strong>연동 방식</strong></td>
+                <td colspan="2">초기 무리한 회원 통합(SSO) 대신, <strong>1:1 상품 상세 직행 딥링크</strong>로 고객 이탈 방지</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 글로벌 푸터 -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>자반고래밥 (JABAN GOREBOB)</h3>
+          <p class="footer-desc">
+            정직한 위생 공정과 철저한 규격 관리로 단체급식과 외식업장에 안전한 수산물을 공급합니다.
+          </p>
+          <div class="business-entities">
+            • <strong>제조 사업체</strong>: 자반고래밥 (김정현 대표 / 수산물 가공식품 제조업)<br>
+            • <strong>유통 사업체</strong>: 주식회사 자반 (김지웅 대표 / 수산물 도소매업 B2B 오프라인 도매)<br>
+            • <strong>통합 고객상담</strong>: 카카오채널 '자반고래밥' / <span class="audit-badge">전화번호 및 운영시간 검수 대기</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>브랜드 안내</h4>
+          <ul>
+            <li><a href="company.html">회사 소개</a></li>
+            <li><a href="quality.html">위생·가공 공정</a></li>
+            <li><a href="guides.html">어종별 선택 가이드</a></li>
+            <li><a href="recipes.html">대량 조리 레시피</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>구매 및 채널</h4>
+          <ul>
+            <li><a href="https://gorebob.com" target="_blank" rel="noopener">공식 쇼핑몰 (gorebob.com)</a></li>
+            <li><a href="contact.html">B2B 대량 도매 문의</a></li>
+            <li><a href="contact.html">고객센터 안내</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 자반고래밥. All rights reserved. (로컬 검토용 와이어프레임)</div>
+        <div>호스팅: 카페24 매니지드 워드프레스 준비 환경</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

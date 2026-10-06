@@ -5,10 +5,13 @@
 
 ## 시작하기
 
+최근 개정 화면은 [홈 초안](jaban-wordpress/prototype/index.html)이며, 다른 컴퓨터의 실행·수정 방법은 [로컬 개발 안내](docs/local-development.md)를 참고합니다.
+
 1. IDE에서 이 폴더를 열거나 `JABAN_WEB.code-workspace`를 열어 기존 업무 프로젝트도 함께 참고합니다.
 2. AI 작업자는 먼저 [AGENTS.md](AGENTS.md), [프로젝트 개요](docs/project-brief.md), [현재 상태](docs/status.md)를 읽습니다.
 3. 구축 전 [호스팅 준비 항목](docs/hosting-checklist.md)을 확인합니다.
 4. 상세 제작 범위와 운영 절차는 [두 사이트 제작 및 운영 계획안](docs/website-production-operation-plan.md)을 참고합니다. 일정·담당·비용·기능 확대 기준은 검토용 제안입니다.
+5. jaban.co.kr의 최신 초안 제작 범위와 고객 동선은 [초안 제작 계획 v3.0](docs/website_planning_proposal.md)을 기준으로 검토합니다. 로컬 대표 화면 8종과 사실 검수·시험 적용·공개 조건을 구분했습니다.
 
 ## 작업 위치
 
@@ -20,7 +23,7 @@
 | `docs/` | 사이트 운영 기준·결정 기록·개발 상태·배포 준비 |
 | `docs/reference/` | 기존 계획서와 미완성 시연 코드의 참고 사본 |
 
-기존 `../JABAN_AGENT/`는 상품·원가·영업 자료, 업무 자동화, 카페24 API 인증·연동의 원본을 유지합니다.
+상위 프로젝트 `../`(JABAN_project)는 상품·원가·영업 자료, 업무 자동화, 카페24 API 인증·연동의 원본을 유지합니다.
 같은 파일을 두 곳에서 수정하지 않습니다. 참고 사본의 원본 위치와 해시는 [자료 목록](docs/reference/source-manifest.json)에 기록합니다.
 
 ## 현재 범위
