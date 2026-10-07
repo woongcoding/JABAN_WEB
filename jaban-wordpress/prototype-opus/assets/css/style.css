@@ -557,4 +557,5 @@ mark { background: rgba(212, 80, 42, .25); color: inherit; padding: 0 2px; }
   .spec th { width: 38%; }
   .foot { grid-template-columns: 1fr; }
   .mock-label .row { grid-template-columns: 6em 1fr; }
+  .hero-fish { display: none; }
 }
