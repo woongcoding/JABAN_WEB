@@ -1,0 +1,272 @@
+<?php
+/**
+ * Template Name: 구매 프로세스 & 주문 요령 | 자반고래밥 B2B 발주 안내
+ * Template Post Type: page
+ */
+defined( 'ABSPATH' ) || exit;
+get_header();
+?>
+
+    
+    <!-- Sub-Hero -->
+    <section class="subpage-hero">
+      <div class="section-container">
+        <span class="eyebrow">ORDERING PROCESS & GUIDE</span>
+        <h1>간편하고 명확한 B2B 구매 프로세스</h1>
+        <p>
+          신규 거래처 등록부터 당일 출고 마감, 전자세금계산서 발행까지<br>
+          영양사님과 구매 담당자가 주방 업무에만 집중할 수 있도록 표준 발주 체계를 제공합니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- 사업장 맞춤 듀얼 탭 발주 프로세스 (식당 vs 급식소) -->
+    <section class="section" style="padding-top: 1rem;">
+      <div class="section-container">
+        
+        <div class="process-tab-container">
+          <div class="process-tab-nav" role="tablist">
+            <button type="button" class="process-tab-btn active" data-track="restaurant">
+              🍽️ 생선구이 식당 / 일반 음식점 발주 프로세스
+            </button>
+            <button type="button" class="process-tab-btn" data-track="catering">
+              🏫 단체급식소 (학교 · 병원 · 기업) 발주 프로세스
+            </button>
+          </div>
+
+          <!-- 패널 1: 생선구이 식당 전용 프로세스 -->
+          <div class="process-tab-panel active" id="process-panel-restaurant">
+            <div style="margin-bottom:2rem;">
+              <span class="eyebrow" style="background:#ffedd5; color:#c2410c;">식당 전용 솔루션</span>
+              <h3 style="font-size:1.5rem; font-weight:800; color:var(--color-primary); margin-top:0.35rem;">
+                통마리 버터플라이 & 두미(대가리/꼬리) 절단 맞춤 발주
+              </h3>
+              <p style="font-size:0.95rem; color:var(--color-text-muted);">
+                테이블 위 푸짐한 1인분 상차림 비주얼을 유지하면서, 주방의 손질 인건비와 음식물 쓰레기를 없애드립니다.
+              </p>
+            </div>
+
+            <div class="process-dual-layout">
+              <!-- 좌측: 식당 4단계 플로우 -->
+              <div class="process-flow process-step-grid">
+                <div class="process-step">
+                  <div class="step-num" style="background:#ea580c;">1</div>
+                  <h4>마리당 규격 선택</h4>
+                  <p>280~320g(점심 백반 구이용), 330~380g(특대 구이 정식용) 중 매장 메뉴 구성에 맞는 규격을 선택합니다.</p>
+                </div>
+                <div class="process-step">
+                  <div class="step-num" style="background:#ea580c;">2</div>
+                  <h4>맞춤 절단 옵션 협의</h4>
+                  <p>① 원형 유지(대가리/꼬리 포함), ② 대가리·꼬리 절단, ③ 2등분 횡단 절단 중 주방 조리도구에 맞게 지정합니다.</p>
+                </div>
+                <div class="process-step">
+                  <div class="step-num" style="background:#ea580c;">3</div>
+                  <h4>14:00 이전 주문 접수</h4>
+                  <p>공식 쇼핑몰(고래밥몰) 또는 전화/발주서로 접수 시 당일 출고되어 다음 날 아침 식당 냉동고로 직배송됩니다.</p>
+                </div>
+                <div class="process-step">
+                  <div class="step-num" style="background:#ea580c;">4</div>
+                  <h4>그릴 직화 5분 서빙</h4>
+                  <p>해동 후 비린내와 싱크대 뒷정리 없이 바로 팬과 그릴에 투입하여 주문 즉시 5분 만에 손님상에 올립니다.</p>
+                </div>
+              </div>
+
+              <!-- 우측: 식당 상차림 실물 카드 -->
+              <div style="border:1px solid var(--color-border); border-radius:var(--radius-md); overflow:hidden; background:var(--color-bg-subtle);">
+                <div style="height:210px; overflow:hidden;">
+                  <img src="<?php echo esc_url( get_template_directory_uri() . "/assets/butterfly_mackerel.jpg" ); ?>" alt="식당용 버터플라이 상차림" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div style="padding:1.25rem;">
+                  <strong style="color:var(--color-primary); font-size:1.05rem; display:block; margin-bottom:0.5rem;">
+                    ★ 식당 사장님 맞춤 가공 특약
+                  </strong>
+                  <ul style="font-size:0.85rem; color:var(--color-text-muted); line-height:1.7; padding-left:1.2rem; margin-bottom:1rem;">
+                    <li><strong>대가리·꼬리 제거:</strong> 그릴 면적 30% 절약, 빠른 조리</li>
+                    <li><strong>2등분 반절 컷:</strong> 소형 프라이팬·생선구이기 최적화</li>
+                    <li><strong>염도 조절:</strong> 밥반찬에 딱 맞는 0.8~1.0% 천일염 저염 자반</li>
+                  </ul>
+                  <a href="https://gorebob.com/" class="btn-primary" style="width:100%; justify-content:center; background:#ea580c;" target="_blank" rel="noopener">
+                    고래밥몰 식당용 박스 바로 주문 ↗
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 패널 2: 단체급식소 전용 프로세스 -->
+          <div class="process-tab-panel" id="process-panel-catering">
+            <div style="margin-bottom:2rem;">
+              <span class="eyebrow" style="background:#e0f2fe; color:#0284c7;">단체급식 전용 솔루션</span>
+              <h3 style="font-size:1.5rem; font-weight:800; color:var(--color-primary); margin-top:0.35rem;">
+                1인 배식 정량 균일 토막 & 콤비오븐 대량 조리 프로세스
+              </h3>
+              <p style="font-size:0.95rem; color:var(--color-text-muted);">
+                배식 편차(크기 불만)를 없애는 g 단위 정밀 컷과 콤비오븐 100~500인분 대량 조리 매뉴얼을 지원합니다.
+              </p>
+            </div>
+
+            <!-- 급식 1인 배식량 & 발주 박스 계산기 -->
+            <div style="background:var(--color-bg-subtle); border:1px solid var(--color-border); border-radius:var(--radius-md); padding:2rem; margin-bottom:2.5rem;">
+              <h4 style="font-size:1.2rem; font-weight:800; color:var(--color-primary); margin-bottom:0.5rem;">
+                🧮 단체급식 1인 배식량 & 발주 박스 자동 계산기
+              </h4>
+              <p style="font-size:0.85rem; color:var(--color-text-muted); margin-bottom:1.25rem;">
+                배식 인원수와 1인당 배식 목표 중량을 선택하시면 필요한 총중량과 권장 박스(10kg 벌크) 수량을 즉시 계산해 드립니다.
+              </p>
+
+              <div class="calc-input-row">
+                <div>
+                  <label style="display:block; font-size:0.85rem; font-weight:700; color:var(--color-primary); margin-bottom:0.4rem;">
+                    1. 배식 인원수 (명)
+                  </label>
+                  <input type="number" id="calc_people" class="form-input" value="300" min="10" step="10" oninput="calculateOrder()">
+                </div>
+
+                <div>
+                  <label style="display:block; font-size:0.85rem; font-weight:700; color:var(--color-primary); margin-bottom:0.4rem;">
+                    2. 1인 배식 중량
+                  </label>
+                  <select id="calc_weight" class="form-input" onchange="calculateOrder()">
+                    <option value="60">60g (초등학생 / 유아식)</option>
+                    <option value="80" selected>80g (중고등 / 일반 급식)</option>
+                    <option value="100">100g (성인 급식 / 병원식)</option>
+                    <option value="120">120g (구내식당 특식 / 1인 필렛)</option>
+                  </select>
+                </div>
+
+                <div style="background:#fff; border:1px solid var(--color-border); border-radius:var(--radius-sm); padding:1rem 1.25rem;">
+                  <div style="display:flex; justify-content:space-between; margin-bottom:0.25rem; font-size:0.85rem;">
+                    <span>필요 순수 가식부:</span>
+                    <strong id="result_kg" style="color:var(--color-primary); font-size:1rem;">24.0 kg</strong>
+                  </div>
+                  <div style="display:flex; justify-content:space-between; font-size:0.85rem;">
+                    <span>권장 발주 박스(10kg 기준):</span>
+                    <strong id="result_box" style="color:var(--color-secondary); font-size:1.15rem;">약 3 박스</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 급식 4단계 프로세스 & 실물 컷 -->
+            <div class="process-dual-layout">
+              <div class="process-flow process-step-grid">
+                <div class="process-step">
+                  <div class="step-num">1</div>
+                  <h4>배식 중량 규격 확정</h4>
+                  <p>1인당 60g, 70g, 80g, 100g 등 피급식자 연령과 단가에 맞춘 정량 균일 토막(Equal-Cut)을 확정합니다.</p>
+                </div>
+                <div class="process-step">
+                  <div class="step-num">2</div>
+                  <h4>행정 및 품의 서류 구비</h4>
+                  <p>식약처 HACCP 지정서, 공인시험기관 자가품질검사 성적서, 원산지증명서를 다운로드하여 기안을 완료합니다.</p>
+                </div>
+                <div class="process-step">
+                  <div class="step-num">3</div>
+                  <h4>콜드체인 박스 입고</h4>
+                  <p>10kg 표준 벌크 박스에 규격 포장된 생선이 -18℃ 이하 냉동 물류망을 통해 급식소 냉동고로 입고됩니다.</p>
+                </div>
+                <div class="process-step">
+                  <div class="step-num">4</div>
+                  <h4>콤비오븐 12분 대량 조리</h4>
+                  <p>타공 팬과 종이호일에 껍질이 위를 향하게 정렬 후 200℃ 12분 조리로 잔반율 0% 배식을 완료합니다.</p>
+                </div>
+              </div>
+
+              <!-- 우측: 급식 트레이 실물 카드 -->
+              <div style="border:1px solid var(--color-border); border-radius:var(--radius-md); overflow:hidden; background:var(--color-bg-subtle);">
+                <div style="height:210px; overflow:hidden;">
+                  <img src="<?php echo esc_url( get_template_directory_uri() . "/assets/catering_portions.jpg" ); ?>" alt="급식실 정량 토막 트레이" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div style="padding:1.25rem;">
+                  <strong style="color:var(--color-primary); font-size:1.05rem; display:block; margin-bottom:0.5rem;">
+                    ★ 단체급식 영양사님 안심 포인트
+                  </strong>
+                  <ul style="font-size:0.85rem; color:var(--color-text-muted); line-height:1.7; padding-left:1.2rem; margin-bottom:1rem;">
+                    <li><strong>배식 편차 제로:</strong> g 단위 정밀 컷으로 학생 불만 방지</li>
+                    <li><strong>안전 가공:</strong> 핀셋 1차 가시 제거 순살 & CCP-2P 금속검출</li>
+                    <li><strong>수율 100%:</strong> 비가식부(내장·머리) 사전 제거로 쓰레기 0%</li>
+                  </ul>
+                  <a href="<?php echo esc_url( home_url( "/docs/" ) ); ?>" class="btn-primary" style="width:100%; justify-content:center;">
+                    급식 품의 서류 자료실 바로가기 →
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- B2B 표준 납품 비주얼 쇼케이스 카드 -->
+        <div class="delivery-showcase-box">
+          <div class="delivery-showcase-img">
+            <img src="<?php echo esc_url( get_template_directory_uri() . "/assets/box_shipping.jpg" ); ?>" alt="자반고래밥 B2B 규격 박스 납품">
+            <div style="position:absolute; bottom:1rem; left:1rem; background:rgba(15,23,42,0.85); color:#fff; font-size:0.75rem; font-weight:700; padding:0.35rem 0.75rem; border-radius:4px;">
+              전국 단체급식소 · 식당 냉동고 직배송 실물
+            </div>
+          </div>
+          <div class="delivery-showcase-content">
+            <span class="eyebrow" style="margin-bottom:0.35rem;">표준 벌크 박스 패키징</span>
+            <h3 style="font-size:1.35rem; font-weight:800; color:var(--color-primary); margin-bottom:0.75rem;">
+              손질 인건비 0원, 100% 가식부 정량 납품
+            </h3>
+            <p style="font-size:0.9rem; color:var(--color-text-muted); line-height:1.6; margin-bottom:1.25rem;">
+              주방에 들어오자마자 해동 후 바로 팬과 오븐으로 직행할 수 있도록 전처리된 정량 필렛이 냉동 차폐 패키징되어 전국 사업장으로 배송됩니다.
+            </p>
+            <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+              <a href="https://gorebob.com/" class="btn-shop" target="_blank" rel="noopener">고래밥몰 박스 주문 바로가기 ↗</a>
+              <a href="<?php echo esc_url( home_url( "/" ) . '#consult' ); ?>" class="btn-outline">샘플 상담 신청</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 주문 요령 상세 카드 -->
+        <div class="order-terms-grid" style="margin-top:2.5rem;">
+          <div class="term-box">
+            <strong>📦 판매 규격 및 최소 주문량</strong>
+            <p style="margin-bottom:0.5rem;">• 업소용 표준: 10kg 벌크 박스 (규격별 팩 포장)</p>
+            <p style="margin-bottom:0.5rem;">• 소형 식당용: 5kg 박스 또는 1팩 단위</p>
+            <p>• 첫 거래처 대상 1회 샘플 박스 지원 상담 가능</p>
+          </div>
+
+          <div class="term-box">
+            <strong>⏰ 배송 및 출고 스케줄</strong>
+            <p style="margin-bottom:0.5rem;">• 평일 14:00 이전 결제 시 당일 즉시 출고 (익일 수령)</p>
+            <p style="margin-bottom:0.5rem;">• 월~금 주 5일 정기 출고 (공휴일 전날 제외)</p>
+            <p>• 정기 대량 납품은 요일별 지정 정기배송 지원</p>
+          </div>
+
+          <div class="term-box">
+            <strong>📑 세금계산서 및 결제 방식</strong>
+            <p style="margin-bottom:0.5rem;">• 사업자 회원 등록 시 100% 전자세금계산서 발행</p>
+            <p style="margin-bottom:0.5rem;">• 신용카드, 실시간 계좌이체, 무통장 입금</p>
+            <p>• 정기 거래 기관은 후불/월말 일괄결제 협의 가능</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 발주서 서식 다운로드 및 간편 문의 -->
+    <section class="section" id="consult">
+      <div class="section-container" style="max-width:800px;">
+        
+        <div style="background:#fff; border:1px solid var(--color-border); border-radius:var(--radius-lg); padding:2.5rem; text-align:center; box-shadow:var(--shadow-sm); margin-bottom:3rem;">
+          <div style="font-size:2rem; margin-bottom:0.5rem;">📄</div>
+          <h3 style="font-size:1.35rem; font-weight:800; color:var(--color-primary); margin-bottom:0.5rem;">
+            표준 대량 발주서 엑셀 양식 다운로드
+          </h3>
+          <p style="font-size:0.95rem; color:var(--color-text-muted); margin-bottom:1.5rem;">
+            단체급식 식재료 품의 및 정기 발주에 사용하는 공식 발주서 양식(Excel)입니다.<br>
+            작성 후 이메일(fineplanning@gmail.com)로 보내주시면 전담 매니저가 확인 후 즉시 회신드립니다.
+          </p>
+          <a href="javascript:alert('대량 발주서 양식(Excel)이 준비되었습니다. 고객센터로 요청 시 즉시 발송해 드립니다.')" class="btn-primary">
+            표준 발주서 양식 다운로드 (Excel) ↓
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  
+<?php
+get_footer();

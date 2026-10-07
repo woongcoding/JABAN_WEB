@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>고객지원 | 자반고래밥 (시안 C)</title>
+<meta name="description" content="문의 목적별 연결, 자주 묻는 질문 검색, 대량·샘플 상담 메모 작성.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Nanum+Myeongjo:wght@700;800&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+<div class="draftbar"><div class="wrap">
+  <span><strong>시안 C</strong> · 검토용 화면입니다. 예시 정보가 포함되어 있으며 접수·다운로드·결제 기능은 없습니다.</span>
+  <button type="button" id="status-toggle" aria-pressed="false">검수 표시 켜기</button>
+</div></div>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="자반고래밥 홈"><svg viewBox="0 0 88 44" aria-hidden="true"><path d="M4 22c10-13 30-18 50-12 6 2 11 5 16 9l12-9-4 12 4 12-12-9c-5 4-10 7-16 9-20 6-40 1-50-12z" fill="#1d5c63"/><path d="M14 17c8-6 20-8 32-6M20 13c8-3 18-3 26-1" stroke="#0e3940" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M8 24c14 8 34 10 54 2" stroke="#d8e7e3" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="15" cy="20" r="2.2" fill="#f3efe6"/></svg><span><b>자반고래밥</b><small>수산물 선택 · 조리 안내</small></span></a>
+    <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-nav"><span class="bars" aria-hidden="true"></span><span class="t">메뉴</span></button>
+    <nav class="nav" id="site-nav" aria-label="주 메뉴">
+      <a href="mackerel.html">고등어 가이드</a>
+      <a href="guides.html">어종·형태 찾기</a>
+      <a href="recipes.html">레시피</a>
+      <a href="tools.html">계산·확인 도구</a>
+      <a href="quality.html">제조·품질</a>
+      <a href="support.html" aria-current="page">고객지원</a>
+    </nav>
+    <div class="head-tools">
+      <button type="button" class="btn-size" aria-pressed="false" aria-label="글자 크게 보기">가+</button>
+      <a class="btn btn-shop btn-small ext" href="https://gorebob.com/" data-shop>고래밥몰 </a>
+    </div>
+  </div>
+</header>
+<main id="main">
+<section class="page-head">
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">홈</a> / 고객지원</div>
+    <span class="kicker">문의 · 상담</span>
+    <h1>고객지원</h1>
+    <p class="lead">문의 목적에 따라 연결되는 곳이 다릅니다. 먼저 아래에서 맞는 길을 고르세요.</p>
+    <nav class="toc" aria-label="이 페이지 목차"><a href="#route">문의 길 찾기</a><a href="#faq">자주 묻는 질문</a><a href="#memo">상담 메모</a></nav>
+  </div>
+</section>
+
+<section class="section" id="route" aria-labelledby="route-h">
+  <div class="wrap">
+    <h2 class="sr-only" id="route-h">문의 목적별 연결</h2>
+    <div class="routes">
+      <div class="route">
+        <span class="who">신규 · 대량 · 샘플</span>
+        <h3>제품 선택·거래 상담</h3>
+        <p>어종·형태·수량·서류가 필요한 상담. 메모를 정리해 전달하면 빠릅니다.</p>
+        <a class="btn btn-primary btn-small" href="#memo">상담 메모 작성</a>
+      </div>
+      <div class="route">
+        <span class="who">이미 주문함</span>
+        <h3>주문·배송·교환</h3>
+        <p>주문 정보 확인이 필요하므로 고래밥몰 주문조회와 고객센터를 이용하세요. 여기에는 주문번호를 남기지 마세요.</p>
+        <a class="btn btn-shop btn-small ext" href="https://gorebob.com/" data-shop>고래밥몰 주문조회 </a>
+      </div>
+      <div class="route">
+        <span class="who">받은 제품 관련</span>
+        <h3>조리·보관 질문</h3>
+        <p>해동·보관·조리 방법은 자주 묻는 질문과 레시피에서 먼저 확인하세요.</p>
+        <a class="btn btn-small" href="#faq">자주 묻는 질문</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="faq" aria-labelledby="faq-h">
+  <div class="wrap" style="max-width:860px">
+    <div class="sec-head"><div><span class="kicker">FAQ</span><h2 class="h-display" id="faq-h">자주 묻는 질문</h2></div><span class="count" id="faq-count" aria-live="polite"></span></div>
+    <div class="faq-search field">
+      <label class="f-label" for="faq-q">질문 검색</label>
+      <input class="input" id="faq-q" type="search" placeholder="예: 가시, 세금계산서, 해동">
+    </div>
+    <div class="faq" id="faq-list"></div>
+  </div>
+</section>
+
+<section class="section" id="memo" aria-labelledby="memo-h">
+  <div class="wrap">
+    <div class="sec-head"><div>
+      <span class="kicker">TOOL 06</span>
+      <h2 class="h-display" id="memo-h">상담 메모 작성</h2>
+      <p class="lead">필요한 조건을 고르면 오른쪽에 상담 메모가 만들어집니다. <b>이 화면은 아무것도 전송하지 않습니다.</b> 복사해서 아래 채널로 보내 주세요. 형태 찾기·계산기·자료 요청에서 고른 내용이 자동으로 담깁니다.</p>
+    </div></div>
+    <div class="memo">
+      <form id="memo-form" class="label-card" onsubmit="return false">
+        <div class="lc-head"><span>상담 조건</span><span>MEMO</span></div>
+        <div class="lc-body">
+          <fieldset><legend>상담 목적</legend><div class="opts">
+            <label class="opt"><input type="radio" name="m-purpose" value="제품·규격 상담"><span>제품·규격</span></label>
+            <label class="opt"><input type="radio" name="m-purpose" value="샘플 문의"><span>샘플</span></label>
+            <label class="opt"><input type="radio" name="m-purpose" value="대량·정기 거래 견적"><span>대량·정기 견적</span></label>
+            <label class="opt"><input type="radio" name="m-purpose" value="품질 자료 요청"><span>자료 요청</span></label>
+          </div></fieldset>
+          <fieldset><legend>사업장 유형</legend><div class="opts">
+            <label class="opt"><input type="radio" name="m-biz" value="식당·외식업"><span>식당·외식업</span></label>
+            <label class="opt"><input type="radio" name="m-biz" value="단체급식"><span>단체급식</span></label>
+            <label class="opt"><input type="radio" name="m-biz" value="유통·프랜차이즈"><span>유통·프랜차이즈</span></label>
+            <label class="opt"><input type="radio" name="m-biz" value="가정"><span>가정</span></label>
+          </div></fieldset>
+          <fieldset><legend>관심 어종 <small>여러 개 선택</small></legend><div class="opts">
+            <label class="opt"><input type="checkbox" name="m-sp" value="고등어"><span>고등어</span></label>
+            <label class="opt"><input type="checkbox" name="m-sp" value="삼치"><span>삼치</span></label>
+            <label class="opt"><input type="checkbox" name="m-sp" value="갈치"><span>갈치</span></label>
+            <label class="opt"><input type="checkbox" name="m-sp" value="임연수"><span>임연수</span></label>
+            <label class="opt"><input type="checkbox" name="m-sp" value="기타"><span>기타</span></label>
+          </div></fieldset>
+          <div class="field"><label class="f-label" for="m-form">원하는 형태·규격</label><input class="input" id="m-form" placeholder="예: 고등어 순살 필렛, 1쪽 중량 문의"></div>
+          <div class="field"><label class="f-label" for="m-qty">예상 수량·주기</label><input class="input" id="m-qty" placeholder="예: 주 2회, 회당 300식"></div>
+          <div class="field"><label class="f-label" for="m-when">희망 시작 시기</label><input class="input" id="m-when" placeholder="예: 다음 달 식단부터"></div>
+          <label class="ck" style="border:0"><input type="checkbox" id="m-calc"><span>필요량 계산기 결과 함께 담기</span></label>
+          <div class="field"><label class="f-label" for="m-etc">기타 요청</label><textarea class="input" id="m-etc" rows="3" placeholder="이름·연락처·주문번호는 적지 마세요"></textarea></div>
+          <button type="button" class="btn btn-small" id="memo-clear">메모 비우기</button>
+        </div>
+      </form>
+      <div class="memo-out">
+        <label class="f-label" for="memo-out">만들어진 상담 메모</label>
+        <textarea class="input" id="memo-out" readonly></textarea>
+        <div class="btn-row" style="margin-top:.8rem"><button type="button" class="btn btn-primary" id="memo-copy">메모 복사</button></div>
+        <div class="channels" data-status="pending">
+          <p class="f-label" style="margin:.6rem 0 0">보낼 곳</p>
+          <div class="channel"><span>카카오톡 채널</span><span class="stamp" data-s="pending">채널 주소 확인 후 게시</span></div>
+          <div class="channel"><span>전화</span><span class="stamp" data-s="pending">번호·운영시간 확인 후 게시</span></div>
+          <div class="channel"><span>이메일</span><span class="stamp" data-s="pending">회사 주소 확인 후 게시</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <h2>자반고래밥</h2>
+        <p>이 사이트는 제품 선택·조리·품질 정보를 안내합니다.<br>주문·결제·회원·주문조회는 고래밥몰에서 이용합니다.</p>
+        <a class="btn btn-shop btn-small ext" href="https://gorebob.com/" data-shop>고래밥몰로 이동 </a>
+      </div>
+      <div>
+        <h3>안내</h3>
+        <ul>
+          <li><a href="mackerel.html">고등어 가이드</a></li>
+          <li><a href="guides.html">어종·형태 찾기</a></li>
+          <li><a href="recipes.html">레시피</a></li>
+          <li><a href="tools.html">계산·확인 도구</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>회사 · 지원</h3>
+        <ul>
+          <li><a href="quality.html">제조·품질</a></li>
+          <li><a href="quality.html#docs">품질 자료 요청</a></li>
+          <li><a href="support.html#faq">자주 묻는 질문</a></li>
+          <li><a href="support.html#memo">상담 메모 작성</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      상호·대표자·사업자등록번호·주소·연락처: <span data-status="pending">사업체 표기 확인 후 게시</span><br>
+      시안 C · 로컬 검토용 · 검색 수집 제외(noindex)
+    </div>
+  </div>
+</footer>
+<div class="mbar" aria-label="빠른 이동">
+  <a class="btn" href="support.html#memo">상담 메모</a>
+  <a class="btn btn-shop ext" href="https://gorebob.com/" data-shop>고래밥몰 </a>
+</div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

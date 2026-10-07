@@ -1,0 +1,31 @@
+<!-- {"title": "레시피", "desc": "어종·조리 방식·가정/대량 조건으로 자반고래밥 수산물 레시피를 찾습니다.", "nav": "recipes"} -->
+<section class="page-head">
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">홈</a> / 레시피</div>
+    <span class="kicker">조리 · 활용</span>
+    <h1>레시피</h1>
+    <p class="lead">어종, 조리 방식, 가정용·대량 조리 조건으로 걸러 보세요. 온도·시간 같은 수치는 조리 검수를 마친 뒤 표시합니다.</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="recipe-h">
+  <div class="wrap">
+    <h2 class="sr-only" id="recipe-h">레시피 목록</h2>
+    <div class="filters" role="search">
+      <div class="field" style="margin:0">
+        <label class="f-label" for="recipe-q">검색</label>
+        <input class="input" id="recipe-q" type="search" placeholder="예: 오븐, 조림, 필렛">
+      </div>
+      <div class="row" data-filter="species"><b>어종</b></div>
+      <div class="row" data-filter="method"><b>조리</b></div>
+      <div class="row" data-filter="scale"><b>규모</b></div>
+    </div>
+    <p class="count" id="recipe-count" aria-live="polite"></p>
+    <div class="recipe-grid" id="recipe-grid"></div>
+  </div>
+</section>
+
+<dialog id="recipe-dlg" aria-labelledby="dlg-title">
+  <div class="dlg-head"><h2 id="dlg-title">레시피</h2><button type="button" class="dlg-close" aria-label="닫기">✕</button></div>
+  <div class="dlg-body" id="dlg-body"></div>
+</dialog>

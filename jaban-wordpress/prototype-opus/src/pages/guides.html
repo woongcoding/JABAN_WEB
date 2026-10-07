@@ -1,0 +1,85 @@
+<!-- {"title": "어종·형태 찾기", "desc": "사업장·조리법·가시 민감도·상차림 4문항으로 맞는 고등어 가공 형태와 함께 볼 어종을 찾습니다.", "nav": "guides"} -->
+<section class="page-head">
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">홈</a> / 어종·형태 찾기</div>
+    <span class="kicker">제품 선택 가이드</span>
+    <h1>어종·형태 찾기</h1>
+    <p class="lead">네 가지 질문에 답하면 맞는 가공 형태와 주문 전 확인할 점을 정리해 드립니다. 고등어를 기준으로, 메뉴 다양화가 필요할 때 함께 볼 어종도 안내합니다.</p>
+    <nav class="toc" aria-label="이 페이지 목차"><a href="#finder">형태 찾기</a><a href="#species">어종 한눈에</a><a href="#words">용어 풀이</a></nav>
+  </div>
+</section>
+
+<section class="section" id="finder" aria-labelledby="finder-h">
+  <div class="wrap">
+    <h2 class="sr-only" id="finder-h">가공 형태 찾기</h2>
+    <div class="finder">
+      <form id="finder-form" class="label-card" onsubmit="return false">
+        <div class="lc-head"><span>질문 4개</span><span>FINDER</span></div>
+        <div class="lc-body">
+          <fieldset>
+            <legend>1. 어디에서 쓰시나요?</legend>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="biz" value="restaurant"><span>식당·외식업</span></label>
+              <label class="opt"><input type="radio" name="biz" value="catering"><span>단체급식</span></label>
+              <label class="opt"><input type="radio" name="biz" value="home"><span>가정</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>2. 주로 어떻게 조리하나요?</legend>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="method" value="grill"><span>팬·그릴 구이</span></label>
+              <label class="opt"><input type="radio" name="method" value="oven"><span>오븐 대량 구이</span></label>
+              <label class="opt"><input type="radio" name="method" value="braise"><span>조림</span></label>
+              <label class="opt"><input type="radio" name="method" value="fry"><span>튀김·강정</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>3. 가시에 얼마나 민감한가요? <small>배식 대상 기준</small></legend>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="bone" value="strict"><span>매우 민감 (유아·어르신 등)</span></label>
+              <label class="opt"><input type="radio" name="bone" value="normal"><span>보통</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>4. 상차림에서 무엇이 더 중요한가요?</legend>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="look" value="whole"><span>한 마리 모양</span></label>
+              <label class="opt"><input type="radio" name="look" value="portion"><span>균일한 1인분</span></label>
+            </div>
+          </fieldset>
+          <button type="button" class="btn btn-small" id="finder-reset">답 지우기</button>
+        </div>
+      </form>
+      <div class="finder-result label-card" aria-live="polite">
+        <div class="lc-head"><span>추천 결과</span><span>RESULT</span></div>
+        <div class="lc-body" id="finder-out"></div>
+      </div>
+    </div>
+    <p class="note info" style="margin-top:1.5rem">추천은 일반적인 쓰임을 바탕으로 한 안내입니다. 실제 판매 규격과 가시 처리 범위는 상품 페이지와 상담으로 확인하세요.</p>
+  </div>
+</section>
+
+<section class="section section-alt reveal" id="species" aria-labelledby="species-h">
+  <div class="wrap">
+    <div class="sec-head"><div>
+      <span class="kicker">어종 한눈에</span>
+      <h2 class="h-display" id="species-h">고등어와 함께 다루는 어종</h2>
+      <p class="lead">고등어는 별도 가이드가 있습니다. 다른 어종의 상세 가이드는 상품 확인을 마치는 순서대로 추가합니다.</p>
+    </div></div>
+    <div class="species-grid" id="species-grid"></div>
+    <p style="margin-top:1.2rem;font-size:.92rem;color:var(--ink-2)">이 밖의 어종(가자미·코다리·오징어 등)도 상담 메모로 문의할 수 있습니다.</p>
+  </div>
+</section>
+
+<section class="section reveal" id="words" aria-labelledby="words-h">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="kicker">용어 풀이</span><h2 class="h-display" id="words-h">가공 형태 용어</h2></div></div>
+    <div class="faq">
+      <details><summary>버터플라이</summary><p>배를 갈라 한 장으로 펼친 형태입니다. 한 마리 모양이 유지되어 구이 상차림에 많이 씁니다.</p></details>
+      <details><summary>손질 (업소용 손질 고등어)</summary><p>내장 등을 손질한 형태입니다. 손질 범위는 상품마다 다르니 상품 설명을 확인하세요.</p></details>
+      <details><summary>필렛 · 순살</summary><p>뼈를 발라낸 한 쪽 살입니다. 가시 처리 범위는 상품마다 다르며 잔가시가 남을 수 있습니다.</p></details>
+      <details><summary>토막</summary><p>일정한 크기로 자른 조각입니다. 뼈 포함 여부와 토막 중량 범위를 확인하세요.</p></details>
+      <details><summary>자반 · 염장</summary><p>소금으로 간을 한 상품입니다. 원재료 표시에서 소금 포함 여부를 볼 수 있습니다.</p></details>
+    </div>
+  </div>
+</section>

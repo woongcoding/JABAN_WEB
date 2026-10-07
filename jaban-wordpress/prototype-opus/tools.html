@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>계산·확인 도구 | 자반고래밥 (시안 C)</title>
+<meta name="description" content="인원·1인 제공량 또는 마리 수로 필요 수량을 계산하고, 주문 전 확인표로 빠진 항목을 점검합니다. 산식과 가정을 모두 표시합니다.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Nanum+Myeongjo:wght@700;800&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+<div class="draftbar"><div class="wrap">
+  <span><strong>시안 C</strong> · 검토용 화면입니다. 예시 정보가 포함되어 있으며 접수·다운로드·결제 기능은 없습니다.</span>
+  <button type="button" id="status-toggle" aria-pressed="false">검수 표시 켜기</button>
+</div></div>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="자반고래밥 홈"><svg viewBox="0 0 88 44" aria-hidden="true"><path d="M4 22c10-13 30-18 50-12 6 2 11 5 16 9l12-9-4 12 4 12-12-9c-5 4-10 7-16 9-20 6-40 1-50-12z" fill="#1d5c63"/><path d="M14 17c8-6 20-8 32-6M20 13c8-3 18-3 26-1" stroke="#0e3940" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M8 24c14 8 34 10 54 2" stroke="#d8e7e3" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="15" cy="20" r="2.2" fill="#f3efe6"/></svg><span><b>자반고래밥</b><small>수산물 선택 · 조리 안내</small></span></a>
+    <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-nav"><span class="bars" aria-hidden="true"></span><span class="t">메뉴</span></button>
+    <nav class="nav" id="site-nav" aria-label="주 메뉴">
+      <a href="mackerel.html">고등어 가이드</a>
+      <a href="guides.html">어종·형태 찾기</a>
+      <a href="recipes.html">레시피</a>
+      <a href="tools.html" aria-current="page">계산·확인 도구</a>
+      <a href="quality.html">제조·품질</a>
+      <a href="support.html">고객지원</a>
+    </nav>
+    <div class="head-tools">
+      <button type="button" class="btn-size" aria-pressed="false" aria-label="글자 크게 보기">가+</button>
+      <a class="btn btn-shop btn-small ext" href="https://gorebob.com/" data-shop>고래밥몰 </a>
+    </div>
+  </div>
+</header>
+<main id="main">
+<section class="page-head">
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">홈</a> / 계산·확인 도구</div>
+    <span class="kicker">주문 준비</span>
+    <h1>계산·확인 도구</h1>
+    <p class="lead">필요한 양을 계산하고, 주문 전에 빠뜨린 항목이 없는지 점검하세요. 가격은 계산하지 않습니다. 가격은 고래밥몰 상품 페이지가 기준입니다.</p>
+    <nav class="toc" aria-label="이 페이지 목차"><a href="#calc">필요량 계산기</a><a href="#check">구매 전 확인표</a></nav>
+  </div>
+</section>
+
+<section class="section" id="calc" aria-labelledby="calc-h">
+  <div class="wrap">
+    <div class="sec-head"><div>
+      <span class="kicker">TOOL 02</span>
+      <h2 class="h-display" id="calc-h">필요량 계산기</h2>
+      <p class="lead">급식은 <b>중량 기준</b>, 마리·토막 단위로 내는 식당은 <b>개수 기준</b>이 편합니다. 모든 기본값은 예시이니 사업장 기준으로 바꿔 넣으세요.</p>
+    </div></div>
+    <div class="calc" id="calc-box">
+      <div>
+        <div class="mode-switch" role="group" aria-label="계산 방식">
+          <button type="button" data-mode="weight" aria-pressed="true">중량 기준 (g)</button>
+          <button type="button" data-mode="count" aria-pressed="false">개수 기준 (마리·토막)</button>
+        </div>
+        <div class="field">
+          <label class="f-label" for="c-people">제공 인원 · 식수</label>
+          <div class="input-unit"><input class="input" id="c-people" type="number" inputmode="numeric" min="1" step="1" value="100"><span>명</span></div>
+        </div>
+        <div data-for="weight">
+          <div class="field">
+            <label class="f-label" for="c-portion">1인 제공량 <small>기관·메뉴 기준</small></label>
+            <div class="input-unit"><input class="input" id="c-portion" type="number" inputmode="decimal" min="1" step="5" value="80"><span>g</span></div>
+            <p class="hint">기본값 80g은 예시입니다. 식단 기준에 맞게 입력하세요.</p>
+          </div>
+          <div class="field">
+            <label class="f-label" for="c-yield">구매 중량 중 실제 사용 비율</label>
+            <div class="input-unit"><input class="input" id="c-yield" type="number" inputmode="decimal" min="1" max="100" step="1" value="100"><span>%</span></div>
+            <p class="hint">뼈·손질·해동으로 줄어드는 양을 반영하려면 낮추세요. 실측값이 없다면 100%로 두고 여유분으로 조정하세요.</p>
+          </div>
+          <div class="field">
+            <label class="f-label" for="c-unit">판매 단위 중량 <small>상품 페이지에서 확인</small></label>
+            <div class="input-unit"><input class="input" id="c-unit" type="number" inputmode="decimal" min="0" step="0.5" placeholder="예: 상품 표시 중량"><span>kg</span></div>
+          </div>
+        </div>
+        <div data-for="count" hidden>
+          <div class="field">
+            <label class="f-label" for="c-per">1인당 개수</label>
+            <div class="input-unit"><input class="input" id="c-per" type="number" inputmode="decimal" min="0.5" step="0.5" value="1"><span>개</span></div>
+            <p class="hint">반 마리씩 내면 0.5를 입력하세요.</p>
+          </div>
+          <div class="field">
+            <label class="f-label" for="c-pack">박스·팩당 입수 <small>상품 페이지에서 확인</small></label>
+            <div class="input-unit"><input class="input" id="c-pack" type="number" inputmode="numeric" min="1" step="1" placeholder="예: 상품 표시 마리 수"><span>개</span></div>
+          </div>
+        </div>
+        <div class="field">
+          <label class="f-label" for="c-extra">여유분</label>
+          <div class="input-unit"><input class="input" id="c-extra" type="number" inputmode="decimal" min="0" max="100" step="1" value="5"><span>%</span></div>
+          <p class="hint">추가 배식·파손 대비. 0으로 두면 정확히 필요한 양만 계산합니다.</p>
+        </div>
+      </div>
+      <div>
+        <div class="receipt" aria-live="polite">
+          <h3>계산 내역</h3>
+          <div id="calc-out"></div>
+          <div class="assume">
+            <b>이 계산의 가정</b>
+            <ul>
+              <li>입력한 1인 제공량·입수·사용 비율이 정확하다는 가정입니다.</li>
+              <li>판매 단위 수는 올림하므로 남는 양이 생길 수 있습니다.</li>
+              <li>가격·재고·배송비는 반영하지 않습니다.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="btn-row" style="margin-top:1.6rem">
+          <button type="button" class="btn btn-small" id="calc-copy">계산 내용 복사</button>
+          <a class="btn btn-small btn-primary" href="support.html#memo">상담 메모에 담기</a>
+          <a class="btn btn-small btn-shop ext" href="https://gorebob.com/" data-shop>상품 단위 확인 </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="check" aria-labelledby="check-h">
+  <div class="wrap">
+    <div class="sec-head"><div>
+      <span class="kicker">TOOL 03</span>
+      <h2 class="h-display" id="check-h">구매 전 확인표</h2>
+      <p class="lead">체크 상태는 이 브라우저에 저장됩니다. <b>남은 항목 복사</b>로 아직 확인하지 않은 것만 담당자에게 보낼 수 있습니다.</p>
+    </div></div>
+    <div data-checklist></div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <h2>자반고래밥</h2>
+        <p>이 사이트는 제품 선택·조리·품질 정보를 안내합니다.<br>주문·결제·회원·주문조회는 고래밥몰에서 이용합니다.</p>
+        <a class="btn btn-shop btn-small ext" href="https://gorebob.com/" data-shop>고래밥몰로 이동 </a>
+      </div>
+      <div>
+        <h3>안내</h3>
+        <ul>
+          <li><a href="mackerel.html">고등어 가이드</a></li>
+          <li><a href="guides.html">어종·형태 찾기</a></li>
+          <li><a href="recipes.html">레시피</a></li>
+          <li><a href="tools.html">계산·확인 도구</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>회사 · 지원</h3>
+        <ul>
+          <li><a href="quality.html">제조·품질</a></li>
+          <li><a href="quality.html#docs">품질 자료 요청</a></li>
+          <li><a href="support.html#faq">자주 묻는 질문</a></li>
+          <li><a href="support.html#memo">상담 메모 작성</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      상호·대표자·사업자등록번호·주소·연락처: <span data-status="pending">사업체 표기 확인 후 게시</span><br>
+      시안 C · 로컬 검토용 · 검색 수집 제외(noindex)
+    </div>
+  </div>
+</footer>
+<div class="mbar" aria-label="빠른 이동">
+  <a class="btn" href="support.html#memo">상담 메모</a>
+  <a class="btn btn-shop ext" href="https://gorebob.com/" data-shop>고래밥몰 </a>
+</div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

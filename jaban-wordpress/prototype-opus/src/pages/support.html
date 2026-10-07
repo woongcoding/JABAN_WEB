@@ -1,0 +1,100 @@
+<!-- {"title": "고객지원", "desc": "문의 목적별 연결, 자주 묻는 질문 검색, 대량·샘플 상담 메모 작성.", "nav": "support"} -->
+<section class="page-head">
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">홈</a> / 고객지원</div>
+    <span class="kicker">문의 · 상담</span>
+    <h1>고객지원</h1>
+    <p class="lead">문의 목적에 따라 연결되는 곳이 다릅니다. 먼저 아래에서 맞는 길을 고르세요.</p>
+    <nav class="toc" aria-label="이 페이지 목차"><a href="#route">문의 길 찾기</a><a href="#faq">자주 묻는 질문</a><a href="#memo">상담 메모</a></nav>
+  </div>
+</section>
+
+<section class="section" id="route" aria-labelledby="route-h">
+  <div class="wrap">
+    <h2 class="sr-only" id="route-h">문의 목적별 연결</h2>
+    <div class="routes">
+      <div class="route">
+        <span class="who">신규 · 대량 · 샘플</span>
+        <h3>제품 선택·거래 상담</h3>
+        <p>어종·형태·수량·서류가 필요한 상담. 메모를 정리해 전달하면 빠릅니다.</p>
+        <a class="btn btn-primary btn-small" href="#memo">상담 메모 작성</a>
+      </div>
+      <div class="route">
+        <span class="who">이미 주문함</span>
+        <h3>주문·배송·교환</h3>
+        <p>주문 정보 확인이 필요하므로 고래밥몰 주문조회와 고객센터를 이용하세요. 여기에는 주문번호를 남기지 마세요.</p>
+        <a class="btn btn-shop btn-small ext" href="https://gorebob.com/" data-shop>고래밥몰 주문조회 </a>
+      </div>
+      <div class="route">
+        <span class="who">받은 제품 관련</span>
+        <h3>조리·보관 질문</h3>
+        <p>해동·보관·조리 방법은 자주 묻는 질문과 레시피에서 먼저 확인하세요.</p>
+        <a class="btn btn-small" href="#faq">자주 묻는 질문</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="faq" aria-labelledby="faq-h">
+  <div class="wrap" style="max-width:860px">
+    <div class="sec-head"><div><span class="kicker">FAQ</span><h2 class="h-display" id="faq-h">자주 묻는 질문</h2></div><span class="count" id="faq-count" aria-live="polite"></span></div>
+    <div class="faq-search field">
+      <label class="f-label" for="faq-q">질문 검색</label>
+      <input class="input" id="faq-q" type="search" placeholder="예: 가시, 세금계산서, 해동">
+    </div>
+    <div class="faq" id="faq-list"></div>
+  </div>
+</section>
+
+<section class="section" id="memo" aria-labelledby="memo-h">
+  <div class="wrap">
+    <div class="sec-head"><div>
+      <span class="kicker">TOOL 06</span>
+      <h2 class="h-display" id="memo-h">상담 메모 작성</h2>
+      <p class="lead">필요한 조건을 고르면 오른쪽에 상담 메모가 만들어집니다. <b>이 화면은 아무것도 전송하지 않습니다.</b> 복사해서 아래 채널로 보내 주세요. 형태 찾기·계산기·자료 요청에서 고른 내용이 자동으로 담깁니다.</p>
+    </div></div>
+    <div class="memo">
+      <form id="memo-form" class="label-card" onsubmit="return false">
+        <div class="lc-head"><span>상담 조건</span><span>MEMO</span></div>
+        <div class="lc-body">
+          <fieldset><legend>상담 목적</legend><div class="opts">
+            <label class="opt"><input type="radio" name="m-purpose" value="제품·규격 상담"><span>제품·규격</span></label>
+            <label class="opt"><input type="radio" name="m-purpose" value="샘플 문의"><span>샘플</span></label>
+            <label class="opt"><input type="radio" name="m-purpose" value="대량·정기 거래 견적"><span>대량·정기 견적</span></label>
+            <label class="opt"><input type="radio" name="m-purpose" value="품질 자료 요청"><span>자료 요청</span></label>
+          </div></fieldset>
+          <fieldset><legend>사업장 유형</legend><div class="opts">
+            <label class="opt"><input type="radio" name="m-biz" value="식당·외식업"><span>식당·외식업</span></label>
+            <label class="opt"><input type="radio" name="m-biz" value="단체급식"><span>단체급식</span></label>
+            <label class="opt"><input type="radio" name="m-biz" value="유통·프랜차이즈"><span>유통·프랜차이즈</span></label>
+            <label class="opt"><input type="radio" name="m-biz" value="가정"><span>가정</span></label>
+          </div></fieldset>
+          <fieldset><legend>관심 어종 <small>여러 개 선택</small></legend><div class="opts">
+            <label class="opt"><input type="checkbox" name="m-sp" value="고등어"><span>고등어</span></label>
+            <label class="opt"><input type="checkbox" name="m-sp" value="삼치"><span>삼치</span></label>
+            <label class="opt"><input type="checkbox" name="m-sp" value="갈치"><span>갈치</span></label>
+            <label class="opt"><input type="checkbox" name="m-sp" value="임연수"><span>임연수</span></label>
+            <label class="opt"><input type="checkbox" name="m-sp" value="기타"><span>기타</span></label>
+          </div></fieldset>
+          <div class="field"><label class="f-label" for="m-form">원하는 형태·규격</label><input class="input" id="m-form" placeholder="예: 고등어 순살 필렛, 1쪽 중량 문의"></div>
+          <div class="field"><label class="f-label" for="m-qty">예상 수량·주기</label><input class="input" id="m-qty" placeholder="예: 주 2회, 회당 300식"></div>
+          <div class="field"><label class="f-label" for="m-when">희망 시작 시기</label><input class="input" id="m-when" placeholder="예: 다음 달 식단부터"></div>
+          <label class="ck" style="border:0"><input type="checkbox" id="m-calc"><span>필요량 계산기 결과 함께 담기</span></label>
+          <div class="field"><label class="f-label" for="m-etc">기타 요청</label><textarea class="input" id="m-etc" rows="3" placeholder="이름·연락처·주문번호는 적지 마세요"></textarea></div>
+          <button type="button" class="btn btn-small" id="memo-clear">메모 비우기</button>
+        </div>
+      </form>
+      <div class="memo-out">
+        <label class="f-label" for="memo-out">만들어진 상담 메모</label>
+        <textarea class="input" id="memo-out" readonly></textarea>
+        <div class="btn-row" style="margin-top:.8rem"><button type="button" class="btn btn-primary" id="memo-copy">메모 복사</button></div>
+        <div class="channels" data-status="pending">
+          <p class="f-label" style="margin:.6rem 0 0">보낼 곳</p>
+          <div class="channel"><span>카카오톡 채널</span><span class="stamp" data-s="pending">채널 주소 확인 후 게시</span></div>
+          <div class="channel"><span>전화</span><span class="stamp" data-s="pending">번호·운영시간 확인 후 게시</span></div>
+          <div class="channel"><span>이메일</span><span class="stamp" data-s="pending">회사 주소 확인 후 게시</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

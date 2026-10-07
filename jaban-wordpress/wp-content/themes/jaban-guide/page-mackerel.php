@@ -1,0 +1,331 @@
+<?php
+/**
+ * Template Name: 고등어 대표 규격 기준관 | 자반고래밥 수산물 표준
+ * Template Post Type: page
+ */
+defined( 'ABSPATH' ) || exit;
+get_header();
+?>
+
+    
+    <!-- Detail Hero -->
+    <section class="hero-section" style="padding: 3.5rem 1.5rem 3rem;">
+      <div class="hero-container">
+        <span class="eyebrow">기준 상품 안내 · GOLDEN REFERENCE</span>
+        <h1 class="hero-title" style="font-size: 2.35rem;">
+          노르웨이 고등어 선택 가이드
+        </h1>
+        <p class="hero-desc" style="max-width: 750px;">
+          자반고래밥의 확고한 주력 품목인 노르웨이 고등어의 손질 형태, 규격별 배식 수량, 
+          조리 적합성을 꼼꼼히 비교하여 주방에 가장 알맞은 상품을 선택하세요.
+        </p>
+
+        <div class="hero-actions" style="margin-bottom: 0;">
+          <a href="https://gorebob.com/" class="btn-primary" target="_blank" rel="noopener">고래밥몰 고등어 바로 주문 ↗</a>
+          <a href="#pack" class="btn-outline">구매 전 확인표 보기 ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 손질 형태별 비교 (순살 필렛 vs 토막) -->
+    <section class="section" id="forms">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="eyebrow">01 · 사업장별 맞춤 가공 형태</span>
+          <h2 class="section-title">생선구이 식당(버터플라이 통마리) vs 단체급식소(1인 배식 정량 토막)</h2>
+          <p class="section-desc">식당 손님상 차림의 비주얼과 단체급식의 균일한 배식 편차를 고려하여 두 가지 맞춤 프로세스로 공급합니다.</p>
+        </div>
+
+        <div class="species-grid">
+          <!-- 1. 생선구이 식당 전용: 버터플라이 통마리 & 두미 절단 옵션 -->
+          <article class="species-card" style="border-top: 4px solid #ea580c;">
+            <div class="species-thumb">
+              <img src="<?php echo esc_url( get_template_directory_uri() . "/assets/butterfly_mackerel.jpg" ); ?>" alt="생선구이 식당 버터플라이 통마리 상차림" style="object-position:center;">
+              <span class="species-badge" style="background:#ea580c;">🍽️ 생선구이 식당 추천</span>
+            </div>
+            <div class="species-body">
+              <div>
+                <div class="species-header">
+                  <h3>버터플라이 통마리 (Butterfly Cut)</h3>
+                </div>
+                <p>
+                  배를 갈라 양쪽으로 펼친 통마리 자반고등어 형태로, 식당 테이블 위에서 가장 푸짐하고 먹음직스러운 1인분 상차림을 연출합니다.
+                </p>
+                
+                <div class="spec-mini-table">
+                  <div><span>기본 형태</span><span>버터플라이 (나비가공 배갈라 펼친 통마리)</span></div>
+                  <div><span>마리당 규격</span><span>280g~320g (중대), 330g~380g (특대 1인 상차림)</span></div>
+                  <div><span>맞춤 가공 옵션</span><span>① 원형(두미 포함) / ② 대가리·꼬리 절단 / ③ 2등분 컷</span></div>
+                  <div><span>주방 이점</span><span>비린내 없이 해동 후 바로 그릴 투입, 5분 초고속 서빙</span></div>
+                  <div><span>포장 단위</span><span>식당용 벌크 5kg / 10kg 박스 출고</span></div>
+                </div>
+              </div>
+              <div class="species-actions" style="margin-top:1rem;">
+                <a href="https://gorebob.com/" class="btn-primary" style="flex:1; justify-content:center; background:#ea580c;" target="_blank" rel="noopener">식당용 버터플라이 쇼핑몰 주문 ↗</a>
+                <a href="#cook" class="btn-outline" style="font-size:0.85rem;">직화 팬 조리법 ↓</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. 단체급식소 전용: 1인 배식 정량 토막 & 순살 필렛 -->
+          <article class="species-card" style="border-top: 4px solid var(--color-secondary);">
+            <div class="species-thumb">
+              <img src="<?php echo esc_url( get_template_directory_uri() . "/assets/catering_portions.jpg" ); ?>" alt="단체급식 1인 배식용 정량 균일 토막" style="object-position:center;">
+              <span class="species-badge" style="background:var(--color-secondary);">🏫 단체급식 배식 추천</span>
+            </div>
+            <div class="species-body">
+              <div>
+                <div class="species-header">
+                  <h3>1인 배식 정량 토막 & 순살 컷 (Equal-Cut)</h3>
+                </div>
+                <p>
+                  피급식자 간 배식 불만(크기 편차)을 없애기 위해 g 단위로 정밀 절단된 급식 전용 규격으로 잔반율과 쓰레기를 최소화합니다.
+                </p>
+                
+                <div class="spec-mini-table">
+                  <div><span>기본 형태</span><span>1인 배식 기준 정량 균일 토막 / 순살 필렛</span></div>
+                  <div><span>배식 중량 규격</span><span>60g (유아·초등) / 70~80g (중고등·일반) / 100g (특식)</span></div>
+                  <div><span>안전 가공 옵션</span><span>① 가시 1차 제거 순살(구이용) / ② 뼈 포함 토막(조림용)</span></div>
+                  <div><span>주방 이점</span><span>콤비오븐 타공 호일 12분 대량 조리, 주방 쓰레기 0%</span></div>
+                  <div><span>행정 지원</span><span>식약처 HACCP 지정서, 자가품질검사 성적서 첨부</span></div>
+                </div>
+              </div>
+              <div class="species-actions" style="margin-top:1rem;">
+                <a href="<?php echo esc_url( home_url( "/process/" ) ); ?>" class="btn-primary" style="flex:1; justify-content:center;">1인 배식량 계산기 & 서식 →</a>
+                <a href="#cook" class="btn-outline" style="font-size:0.85rem;">콤비오븐 조리법 ↓</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 고등어 구매 전 확인표 -->
+    <section class="section section-alt" id="pack">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="eyebrow">02 · 구매 전 확인표</span>
+          <h2 class="section-title">고등어 상품 상세 확인 항목</h2>
+          <p class="section-desc">쇼핑몰 주문 전 아래 표의 기준을 대조하시면 오발주를 예방할 수 있습니다.</p>
+        </div>
+
+        <div class="table-responsive">
+          <table class="check-table">
+            <caption>고등어 발주 시 점검 항목</caption>
+            <thead>
+              <tr>
+                <th style="width: 25%;">확인 항목</th>
+                <th style="width: 40%;">고등어 상품 표시 내용</th>
+                <th style="width: 35%;">주문 전 확인 요령</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>원산지 및 어획</th>
+                <td>노르웨이산 (북대서양 어획, 기름기 20% 이상 선별)</td>
+                <td>제철 가을 어획 원물 사용 여부 확인</td>
+              </tr>
+              <tr>
+                <th>포장 및 판매 단위</th>
+                <td>개별 진공포장 팩(1마리/1필렛) 또는 업소용 벌크 5kg/10kg 박스</td>
+                <td>일일 소진량과 냉동고 보관 공간에 맞춘 단위 선택</td>
+              </tr>
+              <tr>
+                <th>배식용 개당 중량</th>
+                <td>필렛 기준 1쪽당 100g~120g / 토막 기준 1개당 70g~80g</td>
+                <td>총중량 나누기 배식 인원수로 개당 단가 계산</td>
+              </tr>
+              <tr>
+                <th>염지 상태</th>
+                <td>국내산 천일염 저염 자반(염도 약 0.8%~1.0%)</td>
+                <td>구이 전 추가 간을 하지 않아도 알맞은 염도인지 확인</td>
+              </tr>
+              <tr>
+                <th>보관 및 유통기한</th>
+                <td>-18℃ 이하 냉동보관 / 제조일로부터 12개월~24개월</td>
+                <td>선입선출이 가능한 박스 표기 라벨 확인</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 조리 가이드 -->
+    <section class="section" id="cook">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="eyebrow">03 · 주방 조리 가이드</span>
+          <h2 class="section-title">실패 없는 고등어 조리 매뉴얼</h2>
+          <p class="section-desc">단시간에 비린내 없이 겉바속촉으로 조리하는 단체급식 및 식당 추천 세팅입니다.</p>
+        </div>
+
+        <div class="cooking-manual-grid">
+          
+          <!-- 카드뉴스 1: 콤비오븐 대량 조리 -->
+          <div class="manual-card">
+            <div class="manual-header">
+              <div>
+                <h4>콤비오븐 대량 조리 (단체급식 50인분+)</h4>
+                <p style="font-size:0.8rem; color:var(--color-text-muted); margin-top:0.2rem;">뒤집지 않고 껍질까지 바삭하게 완성하는 대량 조리 공식</p>
+              </div>
+              <span class="manual-tag">단체급식 표준</span>
+            </div>
+
+            <!-- 상단 비주얼 썸네일 & 숏폼 트리거 -->
+            <div class="manual-banner-wrap" onclick="openVideoPlayer('shorts_oven')">
+              <img src="<?php echo esc_url( get_template_directory_uri() . "/assets/shorts_oven.jpg" ); ?>" alt="콤비오븐 조리 영상">
+              <div class="manual-video-badge">▶ 0:30 숏폼 영상 보기</div>
+              <div class="manual-banner-overlay">
+                "10분 만에 50토막 끝!" 급식실 오븐 세팅 현장 실증 영상
+              </div>
+            </div>
+
+            <!-- 4단계 카드뉴스 스텝 -->
+            <div class="manual-steps-grid">
+              
+              <div class="manual-step-item">
+                <div>
+                  <div class="step-header">
+                    <span class="step-badge">STEP 1</span>
+                    <strong>완만 자연해동</strong>
+                  </div>
+                  <p class="step-desc">조리 전날 냉장고(0~4℃)에서 12시간 자연해동하여 육즙 손실을 방지합니다.</p>
+                </div>
+                <div class="step-photo-thumb">
+                  <img src="<?php echo esc_url( get_template_directory_uri() . "/assets/fillets_display.jpg" ); ?>" alt="자연해동 필렛">
+                </div>
+              </div>
+
+              <div class="manual-step-item">
+                <div>
+                  <div class="step-header">
+                    <span class="step-badge">STEP 2</span>
+                    <strong>타공 호일 정렬</strong>
+                  </div>
+                  <p class="step-desc">오븐 팬에 종이호일을 깔고 껍질이 위를 향하게 2cm 간격으로 정렬합니다.</p>
+                </div>
+                <div class="step-photo-thumb">
+                  <img src="<?php echo esc_url( get_template_directory_uri() . "/assets/step_tray.jpg" ); ?>" alt="오븐 팬 정렬">
+                </div>
+              </div>
+
+              <div class="manual-step-item">
+                <div>
+                  <div class="step-header">
+                    <span class="step-badge">STEP 3</span>
+                    <strong>콤비 200℃ 12분</strong>
+                  </div>
+                  <p class="step-desc">콤비모드(습도 20%) 200℃에서 스팀으로 속살을 부드럽게 익힙니다.</p>
+                </div>
+                <div class="step-photo-thumb">
+                  <img src="<?php echo esc_url( get_template_directory_uri() . "/assets/shorts_oven.jpg" ); ?>" alt="오븐 콤비 모드">
+                </div>
+              </div>
+
+              <div class="manual-step-item">
+                <div>
+                  <div class="step-header">
+                    <span class="step-badge">STEP 4</span>
+                    <strong>건열 2분 바삭마무리</strong>
+                  </div>
+                  <p class="step-desc">마지막 2분간 건열 모드로 수분을 날려 황금빛 바삭한 껍질을 완성합니다.</p>
+                </div>
+                <div class="step-photo-thumb">
+                  <img src="<?php echo esc_url( get_template_directory_uri() . "/assets/hero.jpg" ); ?>" alt="바삭한 고등어구이">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 카드뉴스 2: 팬 & 그리들 직화 조리 -->
+          <div class="manual-card">
+            <div class="manual-header">
+              <div>
+                <h4>팬 & 그리들 조리 (일반 식당 / 전문점)</h4>
+                <p style="font-size:0.8rem; color:var(--color-text-muted); margin-top:0.2rem;">주문 즉시 5분 만에 테이블로 나가는 겉바속촉 직화 구이</p>
+              </div>
+              <span class="manual-tag" style="background:#fef3c7; color:#92400e;">식당 직화 최적</span>
+            </div>
+
+            <!-- 상단 비주얼 썸네일 & 숏폼 트리거 -->
+            <div class="manual-banner-wrap" onclick="openVideoPlayer('shorts_unpack')">
+              <img src="<?php echo esc_url( get_template_directory_uri() . "/assets/shorts_unpack.jpg" ); ?>" alt="1초 언패킹 팬조리 영상">
+              <div class="manual-video-badge">▶ 0:20 숏폼 영상 보기</div>
+              <div class="manual-banner-overlay">
+                손에 물 한 방울 안 묻히는 1초 언패킹 & 직화 팬 조리
+              </div>
+            </div>
+
+            <!-- 4단계 카드뉴스 스텝 -->
+            <div class="manual-steps-grid">
+              
+              <div class="manual-step-item">
+                <div>
+                  <div class="step-header">
+                    <span class="step-badge">STEP 1</span>
+                    <strong>표면 수분 제거</strong>
+                  </div>
+                  <p class="step-desc">팩 개봉 후 키친타월로 표면 수분을 가볍게 닦아 기름 튐을 방지합니다.</p>
+                </div>
+                <div class="step-photo-thumb">
+                  <img src="<?php echo esc_url( get_template_directory_uri() . "/assets/shorts_unpack.jpg" ); ?>" alt="수분 제거">
+                </div>
+              </div>
+
+              <div class="manual-step-item">
+                <div>
+                  <div class="step-header">
+                    <span class="step-badge">STEP 2</span>
+                    <strong>살코기 70% 구이</strong>
+                  </div>
+                  <p class="step-desc">중약불로 달군 팬에 식용유를 살짝 두르고 살코기 쪽부터 4분간 굽습니다.</p>
+                </div>
+                <div class="step-photo-thumb">
+                  <img src="<?php echo esc_url( get_template_directory_uri() . "/assets/hero.jpg" ); ?>" alt="살코기 구이">
+                </div>
+              </div>
+
+              <div class="manual-step-item">
+                <div>
+                  <div class="step-header">
+                    <span class="step-badge">STEP 3</span>
+                    <strong>껍질 쪽 뒤집기</strong>
+                  </div>
+                  <p class="step-desc">살코기가 70% 익었을 때 뒤집어 껍질 쪽을 4~5분간 노릇하게 굽습니다.</p>
+                </div>
+                <div class="step-photo-thumb">
+                  <img src="<?php echo esc_url( get_template_directory_uri() . "/assets/step_pan.jpg" ); ?>" alt="뒤집개 뒤집기">
+                </div>
+              </div>
+
+              <div class="manual-step-item">
+                <div>
+                  <div class="step-header">
+                    <span class="step-badge">STEP 4</span>
+                    <strong>자체 유분 튀김</strong>
+                  </div>
+                  <p class="step-desc">뚜껑을 덮지 않아야 고등어 고유의 유분이 바삭하게 껍질을 튀겨냅니다.</p>
+                </div>
+                <div class="step-photo-thumb">
+                  <img src="<?php echo esc_url( get_template_directory_uri() . "/assets/hero.jpg" ); ?>" alt="완성 구이">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div style="margin-top: 3rem; text-align: center;">
+          <a href="https://gorebob.com/" class="btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;" target="_blank" rel="noopener">
+            고등어 상품 고래밥몰에서 주문하기 ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+  
+<?php
+get_footer();

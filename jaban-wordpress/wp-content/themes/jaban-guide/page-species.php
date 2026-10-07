@@ -1,0 +1,261 @@
+<?php
+/**
+ * Template Name: 어종별 가공 규격 & 단체급식 레시피 | 자반고래밥
+ * Template Post Type: page
+ */
+defined( 'ABSPATH' ) || exit;
+get_header();
+?>
+
+    
+    <!-- Sub-Hero -->
+    <section class="subpage-hero">
+      <div class="section-container">
+        <span class="eyebrow">FISH SPEC & RECIPE ARCHIVE</span>
+        <h1>어종별 가공 규격 및 실전 레시피 아카이브</h1>
+        <p>
+          주력 고등어부터 삼치, 임연수까지 각 어종의 가공 형태와 배식 규격을 확인하세요.<br>
+          조리실 현장에서 검증된 단체급식 및 식당용 레시피 콘텐츠가 지속적으로 업데이트됩니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- 어종별 가공 규격 상세 카드 -->
+    <section class="section" style="padding-bottom: 2.5rem;">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="eyebrow">01 · 취급 어종별 상세 규격</span>
+          <h2 class="section-title">주방 조건에 맞춘 어종별 스펙</h2>
+          <p class="section-desc">손질 형태(순살 필렛/토막), 1인 배식 권장 중량, 포장 단위를 대조하세요.</p>
+        </div>
+
+        <div class="species-grid">
+          <!-- 1. 고등어 -->
+          <article class="species-card" id="mackerel">
+            <div class="species-thumb">
+              <img src="<?php echo esc_url( get_template_directory_uri() . "/assets/hero.jpg" ); ?>" alt="노르웨이 고등어">
+              <span class="species-badge">주력 기준 상품</span>
+            </div>
+            <div class="species-body">
+              <div>
+                <h3>노르웨이 고등어</h3>
+                <p>북대서양 제철 어획, 풍부한 유분과 고소한 맛. 구이와 조림 모두에 최적화된 기준 어종.</p>
+                <div class="spec-mini-table">
+                  <div><span>원산지</span><span>노르웨이산 (북대서양 FAO 27)</span></div>
+                  <div><span>손질 형태</span><span>[식당] 버터플라이 통마리(두미절단) / [급식] 1인 정량토막·순살</span></div>
+                  <div><span>배식 규격</span><span>식당용 280~380g (통마리) / 급식용 60g, 80g, 100g (정량 컷)</span></div>
+                  <div><span>포장 단위</span><span>5kg, 10kg 벌크 박스 / 개별 진공팩</span></div>
+                  <div><span>염지 상태</span><span>천일염 저염 자반 (약 0.8~1.0%) / 무염(발주 가공)</span></div>
+                </div>
+              </div>
+              <div class="species-actions">
+                <a href="<?php echo esc_url( home_url( "/mackerel/" ) ); ?>" class="btn-detail">고등어 전용 가이드 →</a>
+                <a href="https://gorebob.com/" class="btn-order-link" target="_blank" rel="noopener">주문 ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. 삼치 -->
+          <article class="species-card" id="samchi">
+            <div class="species-thumb">
+              <img src="<?php echo esc_url( get_template_directory_uri() . "/assets/fillets_display.jpg" ); ?>" alt="삼치 필렛" style="object-position: center;">
+              <span class="species-badge" style="background:#0284c7;">급식 선호도 1위</span>
+            </div>
+            <div class="species-body">
+              <div>
+                <h3>국산 / 수입 삼치</h3>
+                <p>비린내가 적고 육질이 담백하여 학교 급식 및 환자식, 데리야끼구이에 선호도가 높은 어종.</p>
+                <div class="spec-mini-table">
+                  <div><span>원산지</span><span>국내산 / 원양산</span></div>
+                  <div><span>손질 형태</span><span>[급식] 가시 1차 제거 순살, 큐브 토막 / [식당] 구이용 대형 필렛</span></div>
+                  <div><span>배식 규격</span><span>급식 60g~80g (정량 컷) / 식당 120g~150g (구이용)</span></div>
+                  <div><span>포장 단위</span><span>10kg 벌크 박스 / 분할 소분 팩</span></div>
+                  <div><span>염지 상태</span><span>무염 (양념 조림·데리야끼 최적) / 저염</span></div>
+                </div>
+              </div>
+              <div class="species-actions">
+                <a href="<?php echo esc_url( home_url( "/process/" ) ); ?>" class="btn-detail">삼치 규격 & 계산기 →</a>
+                <a href="https://gorebob.com/" class="btn-order-link" target="_blank" rel="noopener">주문 ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. 임연수 -->
+          <article class="species-card" id="imyeonsu">
+            <div class="species-thumb">
+              <img src="<?php echo esc_url( get_template_directory_uri() . "/assets/shorts_oven.jpg" ); ?>" alt="임연수 오븐구이" style="object-position: bottom;">
+              <span class="species-badge" style="background:#ea580c;">바삭한 껍질 별미</span>
+            </div>
+            <div class="species-body">
+              <div>
+                <h3>미국산 / 러시아산 임연수</h3>
+                <p>바삭하고 고소한 껍질과 촉촉하고 부드러운 속살로 생선구이 전문점의 인기 메뉴.</p>
+                <div class="spec-mini-table">
+                  <div><span>원산지</span><span>미국산(알래스카) / 러시아산</span></div>
+                  <div><span>손질 형태</span><span>[식당] 나비필렛(버터플라이) / [급식] 순살 컷, 반건조 토막</span></div>
+                  <div><span>배식 규격</span><span>식당용 130g~160g / 급식용 70g~90g 정량 컷</span></div>
+                  <div><span>포장 단위</span><span>5kg / 10kg 박스 포장</span></div>
+                  <div><span>염지 상태</span><span>약염장 (자연 건조)</span></div>
+                </div>
+              </div>
+              <div class="species-actions">
+                <a href="<?php echo esc_url( home_url( "/process/" ) ); ?>" class="btn-detail">임연수 규격 상담 →</a>
+                <a href="https://gorebob.com/" class="btn-order-link" target="_blank" rel="noopener">주문 ↗</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 지속적으로 추가되는 실전 레시피 아카이브 -->
+    <section class="section section-alt" id="recipes">
+      <div class="section-container">
+        
+        <div class="section-header" style="display:flex; justify-content:space-between; align-items:flex-end;">
+          <div>
+            <span class="eyebrow">02 · 지속 업데이트 레시피</span>
+            <h2 class="section-title">조리실 검증 실전 레시피 라이브러리</h2>
+            <p class="section-desc">단체급식과 업소용 주방에서 조리 시간과 잔반을 획기적으로 줄이는 공식 레시피입니다.</p>
+          </div>
+
+          <div style="font-size: 0.9rem; color: var(--color-text-muted);">
+            총 <strong>6개</strong>의 검증된 레시피 등록됨 (매월 추가)
+          </div>
+        </div>
+
+        <div class="recipe-archive-grid">
+          
+          <!-- Recipe 1 -->
+          <article class="recipe-card" onclick="openRecipeModal(1)">
+            <div class="recipe-thumb">
+              <img src="<?php echo esc_url( get_template_directory_uri() . "/assets/hero.jpg" ); ?>" alt="콤비오븐 바삭 고등어구이">
+              <span class="recipe-badge">고등어 · 콤비오븐</span>
+              <span class="recipe-time-badge">⏱ 조리 12분</span>
+            </div>
+            <div class="recipe-body">
+              <div>
+                <h4>콤비오븐 겉바속촉 고등어구이 (50인분)</h4>
+                <p>타공 팬과 종이호일을 활용하여 뒤집지 않고도 껍질이 노릇하고 바삭하게 구워지는 표준 공식.</p>
+              </div>
+              <div class="recipe-meta-row">
+                <span>난이도: 쉬움</span>
+                <span>추천 규격: 순살 필렛 110g</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Recipe 2 -->
+          <article class="recipe-card" onclick="openRecipeModal(2)">
+            <div class="recipe-thumb">
+              <img src="<?php echo esc_url( get_template_directory_uri() . "/assets/shorts_braise.jpg" ); ?>" alt="시래기 묵은지 고등어조림">
+              <span class="recipe-badge" style="background:#b91c1c;">고등어 · 대형솥 조림</span>
+              <span class="recipe-time-badge">⏱ 조리 25분</span>
+            </div>
+            <div class="recipe-body">
+              <div>
+                <h4>시래기 묵은지 고등어조림 (대형솥 100인분)</h4>
+                <p>센 불로 오래 끓여도 살이 부서지지 않고 묵은지의 산미와 고등어 유분이 완벽히 어우러지는 비법.</p>
+              </div>
+              <div class="recipe-meta-row">
+                <span>난이도: 보통</span>
+                <span>추천 규격: 정량 무염 토막 70g</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Recipe 3 -->
+          <article class="recipe-card" onclick="openRecipeModal(3)">
+            <div class="recipe-thumb">
+              <img src="<?php echo esc_url( get_template_directory_uri() . "/assets/fillets_display.jpg" ); ?>" alt="달콤 짭조름 삼치 데리야끼구이">
+              <span class="recipe-badge" style="background:#0284c7;">삼치 · 학생 급식 1위</span>
+              <span class="recipe-time-badge">⏱ 조리 15분</span>
+            </div>
+            <div class="recipe-body">
+              <div>
+                <h4>달콤 짭조름 삼치 데리야끼구이</h4>
+                <p>가시가 없어 학생들이 편하게 먹는 비린내 제로 메뉴. 수제 간장 글레이즈 소스 배합 비율 공개.</p>
+              </div>
+              <div class="recipe-meta-row">
+                <span>난이도: 쉬움</span>
+                <span>추천 규격: 삼치 순살 필렛 80g</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Recipe 4 -->
+          <article class="recipe-card" onclick="openRecipeModal(4)">
+            <div class="recipe-thumb">
+              <img src="<?php echo esc_url( get_template_directory_uri() . "/assets/shorts_unpack.jpg" ); ?>" alt="순살 삼치 탕수 강정">
+              <span class="recipe-badge" style="background:#0284c7;">삼치 · 튀김 요리</span>
+              <span class="recipe-time-badge">⏱ 조리 18분</span>
+            </div>
+            <div class="recipe-body">
+              <div>
+                <h4>잔반율 0% 순살 삼치 탕수 강정</h4>
+                <p>닭강정보다 부드럽고 생선 냄새가 전혀 나지 않는 큐브 튀김. 튀김옷이 눅눅해지지 않는 비법.</p>
+              </div>
+              <div class="recipe-meta-row">
+                <span>난이도: 보통</span>
+                <span>추천 규격: 삼치 큐브 컷 50g</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Recipe 5 -->
+          <article class="recipe-card" onclick="openRecipeModal(5)">
+            <div class="recipe-thumb">
+              <img src="<?php echo esc_url( get_template_directory_uri() . "/assets/shorts_oven.jpg" ); ?>" alt="버터 갈릭 임연수 오븐구이">
+              <span class="recipe-badge" style="background:#ea580c;">임연수 · 생선구이 전문점</span>
+              <span class="recipe-time-badge">⏱ 조리 14분</span>
+            </div>
+            <div class="recipe-body">
+              <div>
+                <h4>버터 갈릭 임연수 오븐구이</h4>
+                <p>바삭한 임연수 껍질에 은은한 마늘 버터 향을 입혀 구내식당 특식 메뉴로 큰 호응을 얻는 레시피.</p>
+              </div>
+              <div class="recipe-meta-row">
+                <span>난이도: 쉬움</span>
+                <span>추천 규격: 임연수 필렛 130g</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Recipe 6 -->
+          <article class="recipe-card" onclick="openRecipeModal(6)">
+            <div class="recipe-thumb">
+              <img src="<?php echo esc_url( get_template_directory_uri() . "/assets/shorts_braise.jpg" ); ?>" alt="임연수 무조림">
+              <span class="recipe-badge" style="background:#ea580c;">임연수 · 국물 탕/조림</span>
+              <span class="recipe-time-badge">⏱ 조리 20분</span>
+            </div>
+            <div class="recipe-body">
+              <div>
+                <h4>칼칼한 임연수 감자 고추장 조림</h4>
+                <p>부드러운 임연수 속살과 파근파근한 감자가 어우러져 밥 한 공기 뚝딱 비우는 식당 단골 메뉴.</p>
+              </div>
+              <div class="recipe-meta-row">
+                <span>난이도: 보통</span>
+                <span>추천 규격: 임연수 반건조 토막</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- 레시피 제보 / 추가 신청 배너 -->
+        <div style="background:#fff; border:1px solid var(--color-border); border-radius:var(--radius-md); padding:2rem; text-align:center;">
+          <h4 style="font-size:1.2rem; font-weight:800; color:var(--color-primary); margin-bottom:0.5rem;">
+            원하시는 메뉴의 업소용 표준 레시피가 필요하신가요?
+          </h4>
+          <p style="font-size:0.95rem; color:var(--color-text-muted); margin-bottom:1.25rem;">
+            식단표 편성 시 필요한 어종별 소스 배합, 오븐 세팅법을 조리 매니저에게 요청하시면 맞춤 안내서를 보내드립니다.
+          </p>
+          <a href="<?php echo esc_url( home_url( "/process/" ) . '#consult' ); ?>" class="btn-primary">레시피 및 규격 문의하기 →</a>
+        </div>
+
+      </div>
+    </section>
+
+  
+<?php
+get_footer();

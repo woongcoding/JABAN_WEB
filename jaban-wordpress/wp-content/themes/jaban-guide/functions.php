@@ -1,31 +1,69 @@
 <?php
-/** Theme helpers for the reviewed Jaban information site. */
+/**
+ * Jaban Guide Theme Functions & Definitions
+ */
 defined( 'ABSPATH' ) || exit;
+
 function jaban_guide_setup() {
     add_theme_support( 'title-tag' );
+    add_theme_support( 'post-thumbnails' );
     add_theme_support( 'html5', array( 'search-form', 'gallery', 'caption', 'style', 'script' ) );
+    register_nav_menus( array(
+        'primary' => __( '메인 네비게이션', 'jaban-guide' ),
+    ) );
 }
 add_action( 'after_setup_theme', 'jaban_guide_setup' );
-function jaban_guide_assets() {
-    wp_enqueue_style( 'jaban-guide', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
+
+function jaban_guide_scripts() {
+    wp_enqueue_style( 'jaban-guide-style', get_stylesheet_uri(), array(), '1.0.0' );
+    wp_enqueue_script( 'jaban-guide-script', get_template_directory_uri() . '/site.js', array(), '1.0.0', true );
 }
-add_action( 'wp_enqueue_scripts', 'jaban_guide_assets' );
-function jaban_guide_url( $name ) {
-    $slugs = array( 'index' => 'jaban-home', 'company' => 'company', 'quality' => 'quality', 'guides' => 'guides', 'recipes' => 'recipes', 'support' => 'support', 'mackerel' => 'mackerel' );
-    if ( ! isset( $slugs[ $name ] ) ) { return home_url( '/' ); }
-    if ( 'index' === $name ) { return set_url_scheme( home_url( '/' ) ); }
-    $page = get_page_by_path( $slugs[ $name ], OBJECT, 'page' );
-    return $page ? set_url_scheme( get_permalink( $page ) ) : set_url_scheme( home_url( '/' ) );
+add_action( 'wp_enqueue_scripts', 'jaban_guide_scripts' );
+
+// URL resolver helper
+function jaban_guide_url( $slug ) {
+    $map = array(
+        'index' => '/',
+        'jaban-home' => '/',
+        'process' => '/process/',
+        'mackerel' => '/mackerel/',
+        'species' => '/species/',
+        'company' => '/company/',
+        'docs' => '/docs/',
+        'media' => '/media/',
+        // Aliases from old versions
+        'guides' => '/species/',
+        'quality' => '/docs/',
+        'recipes' => '/species/',
+        'support' => '/process/'
+    );
+    $path = isset( $map[ $slug ] ) ? $map[ $slug ] : '/' . $slug . '/';
+    return home_url( $path );
 }
-function jaban_guide_content_links( $content ) {
-    return preg_replace_callback( '/href="([a-z]+)\.html(#[^"]*)?"/', function( $match ) {
-        return 'href="' . esc_url( jaban_guide_url( $match[1] ) . ( $match[2] ?? '' ) ) . '"';
+
+// Convert links in content dynamically
+function jaban_filter_content_links( $content ) {
+    $content = preg_replace_callback( '/href="([a-z0-9_-]+)\.html(#[^"]*)?"/', function( $m ) {
+        $file = $m[1];
+        $anchor = $m[2] ?? '';
+        return 'href="' . esc_url( jaban_guide_url( $file ) . $anchor ) . '"';
     }, $content );
+    
+    // Convert assets relative path in content
+    $content = preg_replace(
+        '/(src|poster)=["\']assets\/([^"\']+)["\']/',
+        '$1="' . esc_url( get_template_directory_uri() . '/assets/' ) . '$2"',
+        $content
+    );
+    return $content;
 }
-add_filter( 'the_content', 'jaban_guide_content_links', 9 );
-// This theme is currently for review on the temporary hosting domain.
+add_filter( 'the_content', 'jaban_filter_content_links', 9 );
+
+// Review headers for temporary development environment
 add_filter( 'wp_robots', 'wp_robots_no_robots' );
-function jaban_guide_review_headers() {
-    if ( ! headers_sent() ) { header( 'X-Robots-Tag: noindex, nofollow', true ); }
+function jaban_review_headers() {
+    if ( ! headers_sent() ) {
+        header( 'X-Robots-Tag: noindex, nofollow', true );
+    }
 }
-add_action( 'send_headers', 'jaban_guide_review_headers' );
+add_action( 'send_headers', 'jaban_review_headers' );

@@ -1,29 +1,60 @@
+"""로컬 검토용 7개 페이지 생성. 실행: python3 jaban-wordpress/prototype/build.py"""
 from pathlib import Path
-root=Path(__file__).parent
-header='''<a class="skip" href="#main">본문으로 이동</a><div class="draft">로컬 검토용 초안 · 실제 사진과 상품 정보는 검수 후 반영합니다</div><header><a class="brand" href="index.html">자반고래밥<span>JABAN · 선택부터 조리까지</span></a><details class="menu"><summary>메뉴</summary><nav aria-label="주 메뉴"><a href="index.html#guides">제품 선택 가이드</a><a href="index.html#quality">제조·품질</a><a href="index.html#recipes">레시피·활용</a><a href="index.html#company">회사 소개</a><a href="index.html#support">고객지원</a></nav></details><a class="shop" href="https://gorebob.com/">고래밥몰에서 구매 ↗</a></header>'''
-footer='''<footer><strong>자반고래밥</strong><p>제품 선택과 조리를 돕는 정보 사이트 · 구매는 고래밥몰에서 진행합니다.</p><p class="muted">로컬 화면 초안 / 상품 규격·가시 처리·인증·연락처 검수 대기</p><a href="index.html">홈</a> · <a href="index.html#support">고객지원</a></footer>'''
-home='''<section class="hero"><div><p class="eyebrow">급식에 맞는 선택을 함께</p><h1>어떤 생선을 쓸지,<br>무엇부터 확인할까요?</h1><p class="lead">어종과 가공 형태, 판매 규격을 살펴보고<br>우리 조리에 맞는 제품을 찾아보세요.</p><div class="actions"><a class="button" href="#guides">제품 선택 가이드 보기 →</a><a class="textlink" href="https://gorebob.com/">이미 구매할 제품을 알고 계신가요? ↗</a></div></div><div class="visual"><span>PRODUCT & KITCHEN</span><div class="outline">제품 사진 영역</div><p>실제 제품·조리 사진으로 교체 예정</p></div></section><section id="guides"><p class="eyebrow">01 · 제품 선택</p><h2>어종부터 살펴보세요</h2><p>같은 어종도 손질 방식과 포장 단위가 다를 수 있습니다.</p><div class="cards"><a class="card active" href="mackerel.html"><span class="number">01</span><h3>고등어</h3><p>가공 형태와 규격을 읽는 방법</p><span>가이드 보기 →</span></a>'''+''.join(f'<article class="card"><span class="number">0{i}</span><h3>{name}</h3><p>상품 자료 확인 후 가이드 확장</p><span class="badge">준비 중</span></article>' for i,name in enumerate(['삼치','임연수','갈치'],2))+'''</div><div class="note"><strong>구매 전 확인할 세 가지</strong><p>가공 형태 · 판매 단위와 옵션 · 제품별 가시 안내</p></div></section><section id="quality" class="tinted"><p class="eyebrow">02 · 제조·품질</p><h2>설명에는 확인 가능한 근거를</h2><p>제조 공정과 인증은 적용 대상과 범위를 함께 안내합니다.</p><div class="columns"><article><h3>실제 제조 공정</h3><p>현장 사진과 담당 검수를 거친 공정 설명을 준비합니다.</p><span class="badge">공정·사진 검수 대기</span></article><article><h3>인증과 품질 자료</h3><p>인증 대상, 적용 품목, 유효기간을 확인한 자료를 제공합니다.</p><span class="badge">인증 원본 확인 대기</span></article></div></section><section id="recipes"><p class="eyebrow">03 · 레시피·활용</p><h2>선택한 생선, 조리까지 이어지도록</h2><div class="recipe"><div class="photo">조리 사진 영역</div><div><h3>급식 조리 레시피</h3><p>사용 제품, 분량, 조리 장비와 과정을 함께 안내할 예정입니다. 가정용과 대량 조리 조건을 구분합니다.</p><span class="badge">레시피·영상 검수 대기</span></div></div></section><section id="company" class="tinted"><p class="eyebrow">04 · 회사 소개</p><h2>제조와 유통, 각자의 역할을 분명하게</h2><div class="columns"><article><h3>자반고래밥</h3><p>수산물 가공식품 제조와 온라인 판매</p></article><article><h3>주식회사 자반</h3><p>수산물 도소매와 B2B 납품</p></article></div><p class="muted">사내 프로필 기반 초안 · 외부 표기 검수 대기</p></section><section id="support"><p class="eyebrow">05 · 고객지원</p><h2>필요한 도움에 맞춰 연결합니다</h2><div class="columns"><article><h3>제품 선택·거래 문의</h3><p>규격이나 손질 방식, 거래 조건을 확인하고 싶으신가요?</p><span class="badge">공식 상담 채널 확인 중</span></article><article><h3>기존 주문·배송 문의</h3><p>고래밥몰에서 주문 내역과 기존 고객지원 채널을 확인하세요.</p><a class="textlink" href="https://gorebob.com/">고래밥몰로 이동 ↗</a></article></div></section>'''
-detail='''<div class="breadcrumb"><a href="index.html">홈</a> / <a href="index.html#guides">제품 선택 가이드</a> / 고등어</div><section class="hero compact"><div><p class="eyebrow">제품 선택 가이드 · 01</p><h1>고등어,<br>규격부터 차근차근</h1><p class="lead">어종명만으로 선택하기보다 손질 방식과 판매 단위를 함께 확인하세요.</p><span class="badge">현행 상품·규격 검수 대기</span></div><div class="visual"><span>MACKEREL GUIDE</span><div class="outline">고등어 실제 사진 영역</div><p>상품과 일치하는 사진으로 교체 예정</p></div></section><nav class="subnav" aria-label="가이드 목차"><a href="#form">가공 형태</a><a href="#pack">판매 규격</a><a href="#bones">가시 안내</a><a href="#cook">조리 활용</a><a href="#buy">상품 확인</a></nav><section id="form"><p class="eyebrow">CHECK 01</p><h2>손질 방식은 상품별로 확인하세요</h2><p>상품명과 상세 설명에서 가공 형태를 확인하고, 조리하려는 메뉴에 맞는지 살펴보세요.</p><div class="note">순살·토막 등 실제 판매 형태와 제품 사진은 검수 후 이 영역에 반영합니다.</div></section><section id="pack" class="tinted"><p class="eyebrow">CHECK 02</p><h2>판매 단위와 옵션을 구분하세요</h2><div class="columns"><article><h3>한 개의 판매 단위</h3><p>팩·박스 등 주문 수량 1개가 뜻하는 단위를 상품에서 확인합니다.</p></article><article><h3>선택할 옵션</h3><p>중량·크기·가공 형태 등 선택 가능한 조건을 확인합니다.</p></article></div><p class="muted">포장 중량·조각 수·원산지·옵션은 미확인 상태로 수치를 표시하지 않습니다.</p></section><section id="bones"><p class="eyebrow">CHECK 03</p><h2>가시 안내는 제품별로 읽어주세요</h2><p>‘순살’이라는 이름만으로 가시가 전혀 없다고 판단하지 마세요. 선택한 상품의 가시 처리 설명과 주의사항을 확인하세요.</p><div class="note">제품별 가시 처리 기준과 조리·섭취 주의 문구는 담당 검수 후 적용합니다.</div></section><section id="cook" class="tinted"><p class="eyebrow">조리 활용</p><h2>제품 조건에 맞는 레시피</h2><p>실제 제품과 조리 장비·분량이 확인된 레시피를 연결할 예정입니다.</p><a class="textlink" href="index.html#recipes">레시피 준비 영역 보기 →</a></section><section id="buy"><p class="eyebrow">다음 단계</p><h2>구매 전 실제 상품을 확인하세요</h2><p>이 가이드에 연결할 상품의 규격·옵션·가시 표기를 대조하고 있습니다.</p><button class="button" disabled>상품별 구매 링크 검수 중</button><p class="muted">현재 버튼은 작동하지 않습니다. 확인되지 않은 상품으로 연결하지 않습니다.</p><div class="actions"><a class="textlink" href="https://gorebob.com/">고래밥몰 전체 보기 ↗</a><a class="textlink" href="index.html#support">제품 문의 안내 →</a></div></section>'''
-# 구조 개정: 전체 메뉴와 독립 페이지를 홈에서 한눈에 안내.
-links=[('company.html','회사 소개'),('quality.html','제조·품질'),('guides.html','제품 선택 가이드'),('recipes.html','레시피·활용'),('support.html','고객지원·거래 문의')]
-nav=''.join(f'<a href="{url}">{label}</a>' for url,label in links)
-header=f'<a class="skip" href="#main">본문으로 이동</a><div class="draft">로컬 검토용 초안 · 상품과 공개 문구 검수 대기</div><div class="track"><span><strong>제품 정보와 조리 안내는 jaban.co.kr</strong> · 주문과 결제는 고래밥몰에서</span><a href="https://gorebob.com/">쇼핑몰 바로가기 ↗</a></div><header><a class="brand" href="index.html">자반고래밥<span>제품 선택부터 조리까지</span></a><nav class="desktop-nav" aria-label="전체 메뉴">{nav}</nav><details class="menu"><summary>메뉴</summary><nav aria-label="주 메뉴">{nav}</nav></details><a class="shop" href="https://gorebob.com/">쇼핑몰 구매 ↗</a></header>'
-footer=f'<footer><div><strong>자반고래밥</strong><p>수산물 선택과 조리를 돕는 정보 사이트</p><p class="muted">로컬 초안 · 실제 상품·사진·품질 자료 검수 대기</p></div><nav aria-label="하단 메뉴">{nav}<a href="https://gorebob.com/">고래밥몰 ↗</a></nav></footer>'
-# 기존 내용 중 영역별 본문을 재사용하여 미확인 사실이 추가되지 않게 한다.
-sections={}
-for key in ['guides','quality','recipes','company','support']:
- start=home.index(f'<section id="{key}"')
- end=home.index('</section>',start)+len('</section>')
- sections[key]=home[start:end]
-info=[('guides.html','제품 선택 가이드','어종별 가공 형태, 판매 단위와 가시 안내를 확인하세요.','01'),('quality.html','제조·품질','제조 공정과 인증 자료의 적용 범위를 살펴보세요.','02'),('recipes.html','레시피·활용','제품과 조리 조건에 맞는 활용 정보를 찾아보세요.','03'),('company.html','회사 소개','제조와 유통을 담당하는 사업체의 역할을 알아보세요.','04'),('support.html','고객지원·거래 문의','제품 선택, 대량 거래, 기존 주문 문의의 창구를 확인하세요.','05')]
-cards=''.join(f'<a class="portal-card" href="{url}"><span class="number">{n}</span><h3>{label}</h3><p>{desc}</p><span class="card-link">자세히 보기 →</span></a>' for url,label,desc,n in info)
-cards+='<a class="portal-card mall" href="https://gorebob.com/"><span class="number">SHOP</span><h3>고래밥 쇼핑몰</h3><p>실제 판매 상품의 가격과 옵션을 확인하고 주문하세요.</p><span class="card-link">쇼핑몰로 이동 ↗</span></a>'
-home=f'<section class="hub-hero"><p class="eyebrow">단체급식 · 외식업을 위한 제품 선택 안내</p><h1>생선 선택에 필요한 정보,<br>한곳에서 확인하세요.</h1><p class="lead">회사와 품질을 살펴보고, 어종과 조리 용도에 맞는 제품을 찾으세요.<br>구매할 상품의 규격과 가격은 고래밥몰에서 확인할 수 있습니다.</p><div class="actions"><a class="button" href="guides.html">제품 선택 가이드 보기 →</a><a class="secondary" href="quality.html">제조·품질 확인</a><a class="secondary" href="https://gorebob.com/">쇼핑몰 바로가기 ↗</a></div></section><section class="portal"><p class="eyebrow">필요한 정보로 바로 이동</p><h2>자반고래밥을 알아보는 다섯 가지 길</h2><p>제품 선택부터 품질 확인, 조리와 문의까지 원하는 내용을 찾아보세요.</p><div class="portal-grid">{cards}</div></section><section class="journey tinted"><h2>제품을 처음 선택하시나요?</h2><div class="columns steps"><article><span>01</span><h3>어종과 손질 방식 확인</h3><p>제품 선택 가이드에서 구매 전 확인할 항목을 읽습니다.</p><a href="mackerel.html">고등어 가이드 보기 →</a></article><article><span>02</span><h3>품질·조리 정보 살펴보기</h3><p>관련 근거와 조리 조건을 확인합니다.</p><a href="quality.html">제조·품질 보기 →</a></article><article><span>03</span><h3>상품 확인 또는 문의</h3><p>쇼핑몰에서 옵션을 확인하거나 적절한 상담 채널을 찾습니다.</p><a href="support.html">문의 안내 보기 →</a></article></div></section><section class="roles"><h2>정보 확인과 구매, 이렇게 나뉩니다</h2><div class="columns"><article><h3>jaban.co.kr</h3><p>회사 소개 · 제조·품질 · 제품 선택 · 레시피 · 고객지원</p></article><article><h3>gorebob.com</h3><p>실제 상품 · 판매 가격과 옵션 · 주문과 결제</p><a class="textlink" href="https://gorebob.com/">고래밥몰로 이동 ↗</a></article></div></section>'
-items=[('index.html','자반고래밥 · 제품 선택과 조리 안내',home),('mackerel.html','고등어 선택 가이드',detail)]
-for key,label in [('company','회사 소개'),('quality','제조·품질'),('guides','제품 선택 가이드'),('recipes','레시피·활용'),('support','고객지원·거래 문의')]:
- body=f'<div class="breadcrumb"><a href="index.html">홈</a> / {label}</div>'+sections[key]
- items.append((key+'.html',label,body))
-for filename,title,body in items:
- for key in ['guides','quality','recipes','company','support']:
-  body=body.replace('index.html#'+key,key+'.html')
- (root/filename).write_text(f'<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>{title} · 로컬 초안</title><link rel="stylesheet" href="style.css"></head><body>{header}<main id="main">{body}</main>{footer}</body></html>')
+from html import escape
+
+ROOT = Path(__file__).resolve().parent
+PAGES = [
+    ('index', '자반고래밥 · 식당과 급식에 맞는 생선 선택'),
+    ('mackerel', '고등어 제품 안내'),
+    ('guides', '생선·규격 안내'),
+    ('quality', '제조·품질'),
+    ('recipes', '레시피·활용'),
+    ('company', '회사 소개'),
+    ('support', '고객지원·거래 문의'),
+]
+MENU = [('guides', '생선·규격 안내'), ('quality', '제조·품질'),
+        ('recipes', '레시피·활용'), ('company', '회사 소개'), ('support', '고객지원')]
+
+
+def render(name, title):
+    nav = ''.join(f'<a href="{key}.html"' + (' aria-current="page"' if key == name else '')
+                  + f'>{label}</a>' for key, label in MENU)
+    body = (ROOT / 'content' / f'{name}.html').read_text()
+    for component in ['checklist', 'cooking', 'consult']:
+        token = '{{' + component + '}}'
+        if token in body:
+            body = body.replace(token, (ROOT / 'content' / f'_{component}.html').read_text())
+    return f'''<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>{escape(title)} · 로컬 초안</title>
+<link rel="stylesheet" href="style.css">
+<script src="site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 이동</a>
+<div class="draft">로컬 검토용 초안 · 상품 정보 검수 중 · 상담은 접수되지 않습니다</div>
+<header>
+<a class="brand" href="index.html">자반고래밥<span>제품 선택부터 조리까지</span></a>
+<nav class="desktop-nav" aria-label="전체 메뉴">{nav}</nav>
+<details class="menu"><summary>메뉴</summary><nav aria-label="주 메뉴">{nav}</nav></details>
+<a class="shop" href="https://gorebob.com/">고래밥몰에서 주문 ↗</a>
+</header>
+<main id="main">{body}</main>
+<footer>
+<div><a class="brand" href="index.html">자반고래밥</a><p>식당과 급식을 위한 생선 선택·조리 안내</p><p class="muted">제품 정보는 jaban.co.kr · 주문과 결제는 gorebob.com</p></div>
+<nav aria-label="하단 메뉴">{nav}<a href="https://gorebob.com/">고래밥몰에서 주문 ↗</a></nav>
+<p class="footer-note">검토용 화면입니다. 실제 상품·사진·품질 자료·상담 운영 조건은 확인 후 반영합니다.</p>
+</footer>
+</body>
+</html>
+'''
+
+
+if __name__ == '__main__':
+    for name, title in PAGES:
+        (ROOT / f'{name}.html').write_text(render(name, title))
+    print(f'{len(PAGES)}개 로컬 페이지 생성 완료')

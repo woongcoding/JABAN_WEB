@@ -13,6 +13,20 @@
 4. 상세 제작 범위와 운영 절차는 [두 사이트 제작 및 운영 계획안](docs/website-production-operation-plan.md)을 참고합니다. 일정·담당·비용·기능 확대 기준은 검토용 제안입니다.
 5. jaban.co.kr의 최신 초안 제작 범위와 고객 동선은 [초안 제작 계획 v3.0](docs/website_planning_proposal.md)을 기준으로 검토합니다. 로컬 대표 화면 8종과 사실 검수·시험 적용·공개 조건을 구분했습니다.
 
+## GitHub 공유 및 시안 비교
+
+[GitHub 저장소](https://github.com/woongcoding/JABAN_WEB)에 웹 프로젝트의 소스와 검토용 시안을 공유합니다.
+
+| 경로 | 내용 |
+|---|---|
+| [기본 시안](jaban-wordpress/prototype/index.html) | 고등어 중심 v2.2 홈·제품 가이드 |
+| [Gemini 시안](jaban-wordpress/prototype-gemini/index.html) | 사진과 발주·자료실 중심의 별도 검토 시안 |
+| [Opus 시안](jaban-wordpress/prototype-opus/index.html) | 별도 비교 시안과 계산·확인 도구 화면 |
+
+각 시안은 검토 중이며, 예시 정보나 미연동 기능이 포함될 수 있습니다. GitHub 소스 공유가 운영 사이트 배포나 상품 정보 검수를 의미하지 않습니다. 이번 공유 시 테마 폴더에는 Gemini 기반 변경도 포함되어 있습니다. 상세 이력은 `docs/status.md`를 참고하세요.
+
+저장소 루트에서 `python3 -m http.server 8080 --bind 127.0.0.1 --directory jaban-wordpress`를 실행하고 `http://127.0.0.1:8080/prototype/`, `/prototype-gemini/`, `/prototype-opus/`에서 비교할 수 있습니다.
+
 ## 작업 위치
 
 | 경로 | 담당 범위 |

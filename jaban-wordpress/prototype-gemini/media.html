@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>식재료 영상 갤러리 | 자반고래밥 유튜브 미디어 라이브러리</title>
+  <meta name="description" content="생선을 식재료로 다루는 콤비오븐 대량 조리, 1초 언패킹, 가시 제거 공정 등 생생한 숏폼 & 동영상 갤러리.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Sticky Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="logo-badge">공식 정보관</span>
+        <a href="index.html" class="logo-text">자반고래밥</a>
+        <span class="sub-text">미디어 라이브러리</span>
+      </div>
+      
+      <nav class="main-nav" aria-label="메인 메뉴">
+        <a href="index.html" class="nav-link">홈</a>
+        <a href="species.html" class="nav-link">생선·규격·레시피</a>
+        <a href="process.html" class="nav-link">구매·발주 요령</a>
+        <a href="company.html" class="nav-link">제조 핵심가치</a>
+        <a href="docs.html" class="nav-link">서류 자료실</a>
+        <a href="media.html" class="nav-link active">식재료 영상 갤러리</a>
+      </nav>
+
+      <div class="header-cta">
+        <a href="https://gorebob.com/" class="btn-shop" target="_blank" rel="noopener">고래밥몰에서 주문 ↗</a>
+        <button type="button" class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="메뉴 열기">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <!-- 모바일 드로어 메뉴 -->
+      <div class="mobile-drawer" id="mobileDrawer">
+        <a href="index.html" class="nav-link">홈 (공식 메인)</a>
+        <a href="mackerel.html" class="nav-link">고등어 대표 기준관</a>
+        <a href="species.html" class="nav-link">생선·규격·레시피</a>
+        <a href="process.html" class="nav-link">구매·발주 요령 (식당 vs 급식)</a>
+        <a href="company.html" class="nav-link">제조 핵심가치</a>
+        <a href="docs.html" class="nav-link">서류 자료실</a>
+        <a href="media.html" class="nav-link active">식재료 영상 갤러리</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    
+    <!-- Sub-Hero -->
+    <section class="subpage-hero">
+      <div class="section-container">
+        <span class="eyebrow" style="background:#fee2e2; color:#ef4444;">YOUTUBE VIDEO GALLERY</span>
+        <h1>생선 식재료 동영상 갤러리</h1>
+        <p>
+          긴 글보다 명쾌한 30초 실증 영상! 급식실 콤비오븐 대량 조리부터 1초 언패킹 직화 팬 구이, 
+          안전한 가시 제거 공정까지 유튜브에 등록된 생생한 조리 영상을 한곳에서 확인하세요.
+        </p>
+      </div>
+    </section>
+
+    <!-- 비디오 갤러리 섹션 -->
+    <section class="section">
+      <div class="section-container">
+        
+        <div class="section-header" style="display:flex; justify-content:space-between; align-items:flex-end;">
+          <div>
+            <span class="eyebrow">VIDEO PLAYLIST</span>
+            <h2 class="section-title">주방 현장 실증 영상 목록</h2>
+            <p class="section-desc">원하시는 영상을 클릭하시면 플레이어 팝업으로 즉시 시청하실 수 있습니다.</p>
+          </div>
+
+          <div style="font-size:0.9rem; color:var(--color-text-muted);">
+            총 <strong>6개</strong>의 실증 영상 등록됨
+          </div>
+        </div>
+
+        <div class="video-gallery-grid">
+          
+          <!-- Video 1 -->
+          <article class="video-gallery-card" onclick="openVideoPlayer('shorts_oven')">
+            <div class="gallery-thumb-wrap">
+              <img src="assets/shorts_oven.jpg" alt="콤비오븐 조리 영상">
+              <div class="play-overlay-icon">▶</div>
+              <span class="recipe-time-badge" style="background:rgba(239,68,68,0.9);">0:30 SHORTS</span>
+            </div>
+            <div class="gallery-card-body">
+              <div class="gallery-tag">#대량조리 #콤비오븐 #단체급식</div>
+              <h4>"10분 만에 50토막 끝!" 급식실 콤비오븐 세팅 쾌감</h4>
+              <p>포장 뜯고 오븐 트레이에 정렬하는 데 단 48초. 껍질 바삭한 고등어 콤비오븐 세팅 공식.</p>
+            </div>
+          </article>
+
+          <!-- Video 2 -->
+          <article class="video-gallery-card" onclick="openVideoPlayer('shorts_unpack')">
+            <div class="gallery-thumb-wrap">
+              <img src="assets/shorts_unpack.jpg" alt="1초 언패킹 영상">
+              <div class="play-overlay-icon">▶</div>
+              <span class="recipe-time-badge" style="background:rgba(239,68,68,0.9);">0:20 SHORTS</span>
+            </div>
+            <div class="gallery-card-body">
+              <div class="gallery-tag">#식당구이 #비린내ZERO #1초조리</div>
+              <h4>손에 물 한 방울 안 묻히는 1초 언패킹 & 직화 팬 구이</h4>
+              <p>싱크대 청소 제로! 가위로 뜯어 달궈진 팬에 미끄러뜨리는 간편 조리 실증.</p>
+            </div>
+          </article>
+
+          <!-- Video 3 -->
+          <article class="video-gallery-card" onclick="openVideoPlayer('shorts_braise')">
+            <div class="gallery-thumb-wrap">
+              <img src="assets/shorts_braise.jpg" alt="뚝배기 조림 영상">
+              <div class="play-overlay-icon">▶</div>
+              <span class="recipe-time-badge" style="background:rgba(239,68,68,0.9);">0:35 SHORTS</span>
+            </div>
+            <div class="gallery-card-body">
+              <div class="gallery-tag">#조림요리 #살안부서짐 #양념흡수</div>
+              <h4>끓여도 살이 부서지지 않는 단단한 정량 토막 비법</h4>
+              <p>센 불에 20분 이상 졸여도 형태가 유지되고 무와 국물에 감칠맛이 배는 비결.</p>
+            </div>
+          </article>
+
+          <!-- Video 4 -->
+          <article class="video-gallery-card" onclick="openVideoPlayer('video_teriyaki')">
+            <div class="gallery-thumb-wrap">
+              <img src="assets/fillets_display.jpg" alt="삼치 데리야끼 조리 영상" style="object-position:center;">
+              <div class="play-overlay-icon">▶</div>
+              <span class="recipe-time-badge" style="background:rgba(239,68,68,0.9);">0:45 SHORTS</span>
+            </div>
+            <div class="gallery-card-body">
+              <div class="gallery-tag">#삼치 #가시제로 #학생급식1위</div>
+              <h4>가시 컴플레인 없는 순살 삼치 데리야끼 글레이즈 조리법</h4>
+              <p>부드러운 살코기에 윤기 나는 데리야끼 소스를 얹어 학생 급식 배식하는 현장 컷.</p>
+            </div>
+          </article>
+
+          <!-- Video 5 -->
+          <article class="video-gallery-card" onclick="openVideoPlayer('video_factory')">
+            <div class="gallery-thumb-wrap">
+              <img src="assets/step_metal.jpg" alt="위생 공정 영상">
+              <div class="play-overlay-icon">▶</div>
+              <span class="recipe-time-badge" style="background:rgba(239,68,68,0.9);">0:40 CLIP</span>
+            </div>
+            <div class="gallery-card-body">
+              <div class="gallery-tag">#HACCP #CCP2P #금속검출기</div>
+              <h4>자반고래밥 HACCP 공장 금속검출 CCP-2P 및 핀셋 가시제거</h4>
+              <p>미세 낚싯바늘과 잔가시를 걸러내는 7단계 위생 검증 라인 현장 영상.</p>
+            </div>
+          </article>
+
+          <!-- Video 6 -->
+          <article class="video-gallery-card" onclick="openVideoPlayer('video_crispy')">
+            <div class="gallery-thumb-wrap">
+              <img src="assets/step_tray.jpg" alt="종이호일 팁 영상">
+              <div class="play-overlay-icon">▶</div>
+              <span class="recipe-time-badge" style="background:rgba(239,68,68,0.9);">0:30 SHORTS</span>
+            </div>
+            <div class="gallery-card-body">
+              <div class="gallery-tag">#오븐청소꿀팁 #종이호일 #타공법</div>
+              <h4>생선 껍질 1도 안 눌어붙는 콤비오븐 타공 종이호일 세팅 공식</h4>
+              <p>팬 설거지 시간을 80% 줄이고 기름은 쏙 빠지는 조리실 꿀팁 영상.</p>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- 유튜브 채널 구독 안내 -->
+        <div style="margin-top:3.5rem; background:var(--color-bg-subtle); border:1px solid var(--color-border); border-radius:var(--radius-md); padding:2rem; text-align:center;">
+          <h4 style="font-size:1.25rem; font-weight:800; color:var(--color-primary); margin-bottom:0.5rem;">
+            더 많은 업소용 조리 영상과 꿀팁을 유튜브 채널에서 확인하세요
+          </h4>
+          <p style="font-size:0.95rem; color:var(--color-text-muted); margin-bottom:1.5rem;">
+            매주 새로운 어종 손질법, 대용량 오븐 세팅 노하우, 잔반 줄이기 팁이 업로드됩니다.
+          </p>
+          <a href="https://www.youtube.com" class="btn-primary" target="_blank" rel="noopener" style="background:#ff0000;">
+            ▶ 자반고래밥 유튜브 공식 채널 바로가기 ↗
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Video Player Modal Dialog -->
+  <div class="modal-overlay" id="videoPlayerModal">
+    <div class="modal-box" style="max-width: 540px;">
+      <div class="modal-header">
+        <h3 id="modalVideoTitle">영상 제목</h3>
+        <button type="button" class="modal-close-btn" onclick="closeVideoPlayer()">✕</button>
+      </div>
+      <div class="modal-body" style="padding:0;">
+        <div style="width:100%; aspect-ratio:9/14; background:#000; position:relative;">
+          <img id="modalVideoThumb" src="assets/shorts_oven.jpg" alt="영상 화면" style="width:100%; height:100%; object-fit:cover;">
+          <div style="position:absolute; bottom:1.5rem; left:1.5rem; right:1.5rem; background:rgba(15,23,42,0.9); padding:1rem; border-radius:var(--radius-sm); color:#fff;">
+            <p id="modalVideoDesc" style="font-size:0.85rem; line-height:1.5; margin-bottom:0.75rem; color:#cbd5e1;"></p>
+            <a href="https://gorebob.com/" class="btn-shop" style="width:100%; justify-content:center;" target="_blank" rel="noopener">
+              영상 속 제품 고래밥몰에서 주문 ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h4>(주)자반고래밥 공식 규격 정보관</h4>
+          <p>식당과 단체급식을 위한 신선 수산물 직영 가공 제조 전문</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">홈</a>
+          <a href="species.html">생선·규격·레시피</a>
+          <a href="process.html">구매·발주 요령</a>
+          <a href="company.html">제조 핵심가치</a>
+          <a href="docs.html">서류 자료실</a>
+          <a href="media.html">영상 갤러리</a>
+          <a href="https://gorebob.com/" target="_blank" rel="noopener"><strong>고래밥몰 주문 ↗</strong></a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>상호: (주)자반 | 대표: 김지웅 | 사업자등록번호: 000-00-00000 | 본사 및 가공공장: 부산광역시 사하구</p>
+        <p>고객센터: 051-000-0000 | 이메일: fineplanning@gmail.com | © JABAN All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

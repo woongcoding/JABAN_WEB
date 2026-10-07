@@ -1,0 +1,94 @@
+<!-- {"title": "계산·확인 도구", "desc": "인원·1인 제공량 또는 마리 수로 필요 수량을 계산하고, 주문 전 확인표로 빠진 항목을 점검합니다. 산식과 가정을 모두 표시합니다.", "nav": "tools"} -->
+<section class="page-head">
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">홈</a> / 계산·확인 도구</div>
+    <span class="kicker">주문 준비</span>
+    <h1>계산·확인 도구</h1>
+    <p class="lead">필요한 양을 계산하고, 주문 전에 빠뜨린 항목이 없는지 점검하세요. 가격은 계산하지 않습니다. 가격은 고래밥몰 상품 페이지가 기준입니다.</p>
+    <nav class="toc" aria-label="이 페이지 목차"><a href="#calc">필요량 계산기</a><a href="#check">구매 전 확인표</a></nav>
+  </div>
+</section>
+
+<section class="section" id="calc" aria-labelledby="calc-h">
+  <div class="wrap">
+    <div class="sec-head"><div>
+      <span class="kicker">TOOL 02</span>
+      <h2 class="h-display" id="calc-h">필요량 계산기</h2>
+      <p class="lead">급식은 <b>중량 기준</b>, 마리·토막 단위로 내는 식당은 <b>개수 기준</b>이 편합니다. 모든 기본값은 예시이니 사업장 기준으로 바꿔 넣으세요.</p>
+    </div></div>
+    <div class="calc" id="calc-box">
+      <div>
+        <div class="mode-switch" role="group" aria-label="계산 방식">
+          <button type="button" data-mode="weight" aria-pressed="true">중량 기준 (g)</button>
+          <button type="button" data-mode="count" aria-pressed="false">개수 기준 (마리·토막)</button>
+        </div>
+        <div class="field">
+          <label class="f-label" for="c-people">제공 인원 · 식수</label>
+          <div class="input-unit"><input class="input" id="c-people" type="number" inputmode="numeric" min="1" step="1" value="100"><span>명</span></div>
+        </div>
+        <div data-for="weight">
+          <div class="field">
+            <label class="f-label" for="c-portion">1인 제공량 <small>기관·메뉴 기준</small></label>
+            <div class="input-unit"><input class="input" id="c-portion" type="number" inputmode="decimal" min="1" step="5" value="80"><span>g</span></div>
+            <p class="hint">기본값 80g은 예시입니다. 식단 기준에 맞게 입력하세요.</p>
+          </div>
+          <div class="field">
+            <label class="f-label" for="c-yield">구매 중량 중 실제 사용 비율</label>
+            <div class="input-unit"><input class="input" id="c-yield" type="number" inputmode="decimal" min="1" max="100" step="1" value="100"><span>%</span></div>
+            <p class="hint">뼈·손질·해동으로 줄어드는 양을 반영하려면 낮추세요. 실측값이 없다면 100%로 두고 여유분으로 조정하세요.</p>
+          </div>
+          <div class="field">
+            <label class="f-label" for="c-unit">판매 단위 중량 <small>상품 페이지에서 확인</small></label>
+            <div class="input-unit"><input class="input" id="c-unit" type="number" inputmode="decimal" min="0" step="0.5" placeholder="예: 상품 표시 중량"><span>kg</span></div>
+          </div>
+        </div>
+        <div data-for="count" hidden>
+          <div class="field">
+            <label class="f-label" for="c-per">1인당 개수</label>
+            <div class="input-unit"><input class="input" id="c-per" type="number" inputmode="decimal" min="0.5" step="0.5" value="1"><span>개</span></div>
+            <p class="hint">반 마리씩 내면 0.5를 입력하세요.</p>
+          </div>
+          <div class="field">
+            <label class="f-label" for="c-pack">박스·팩당 입수 <small>상품 페이지에서 확인</small></label>
+            <div class="input-unit"><input class="input" id="c-pack" type="number" inputmode="numeric" min="1" step="1" placeholder="예: 상품 표시 마리 수"><span>개</span></div>
+          </div>
+        </div>
+        <div class="field">
+          <label class="f-label" for="c-extra">여유분</label>
+          <div class="input-unit"><input class="input" id="c-extra" type="number" inputmode="decimal" min="0" max="100" step="1" value="5"><span>%</span></div>
+          <p class="hint">추가 배식·파손 대비. 0으로 두면 정확히 필요한 양만 계산합니다.</p>
+        </div>
+      </div>
+      <div>
+        <div class="receipt" aria-live="polite">
+          <h3>계산 내역</h3>
+          <div id="calc-out"></div>
+          <div class="assume">
+            <b>이 계산의 가정</b>
+            <ul>
+              <li>입력한 1인 제공량·입수·사용 비율이 정확하다는 가정입니다.</li>
+              <li>판매 단위 수는 올림하므로 남는 양이 생길 수 있습니다.</li>
+              <li>가격·재고·배송비는 반영하지 않습니다.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="btn-row" style="margin-top:1.6rem">
+          <button type="button" class="btn btn-small" id="calc-copy">계산 내용 복사</button>
+          <a class="btn btn-small btn-primary" href="support.html#memo">상담 메모에 담기</a>
+          <a class="btn btn-small btn-shop ext" href="https://gorebob.com/" data-shop>상품 단위 확인 </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="check" aria-labelledby="check-h">
+  <div class="wrap">
+    <div class="sec-head"><div>
+      <span class="kicker">TOOL 03</span>
+      <h2 class="h-display" id="check-h">구매 전 확인표</h2>
+      <p class="lead">체크 상태는 이 브라우저에 저장됩니다. <b>남은 항목 복사</b>로 아직 확인하지 않은 것만 담당자에게 보낼 수 있습니다.</p>
+    </div></div>
+    <div data-checklist></div>
+  </div>
+</section>
